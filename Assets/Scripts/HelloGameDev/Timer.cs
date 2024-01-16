@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +8,9 @@ namespace HelloGameDev
     public class Timer : MonoBehaviour
     {
         [SerializeField] private bool DisplayMilliseconds;
+        [Range(1, 3)]
+        [Tooltip("Number of decimals to display for milliseconds timer")]
+        [SerializeField] private int NumberOfDecimals = 3;
         [Header("Required References")]
         [SerializeField] private TMP_Text TimerLabel;
 
@@ -34,7 +39,11 @@ namespace HelloGameDev
             TimerLabel.text = $"{minutes}:{seconds}";
 
             if (DisplayMilliseconds)
-                TimerLabel.text += $":{((elapsed * 100f) % 99f).ToString("00")}";
+            {
+                var precision = Mathf.Pow(10f, NumberOfDecimals);
+
+                TimerLabel.text += $":{(elapsed * precision % (precision - 1)).ToString(String.Concat(Enumerable.Repeat("0", NumberOfDecimals)))}";
+            }
         }
 
         private void DisableComponent()

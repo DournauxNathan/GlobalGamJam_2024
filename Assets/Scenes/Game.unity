@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayMilliseconds: 1
+  NumberOfDecimals: 2
   TimerLabel: {fileID: 65628822}
 --- !u!1 &347807330
 GameObject:
