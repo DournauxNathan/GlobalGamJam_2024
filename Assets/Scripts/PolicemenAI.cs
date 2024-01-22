@@ -6,25 +6,26 @@ using UnityEditor;
 
 public class PolicemenAI : MonoBehaviour
 {
-    NavMeshAgent _navMeshAgent;
-    public bool _isMoving = false;
-    private Vector3 _destination;
+    [SerializeField] private Animator _animator;
+    private NavMeshAgent _navMeshAgent;
     private ZoneManager _zoneManager;
-    public float _waitDuration;
 
-    public GameObject projectilePrefab;
+    // Movement
+    [SerializeField] private bool _isMoving = false;
+    [SerializeField] private float _waitDuration;
+    [SerializeField] private Vector3 _destination;
 
-    public Transform shootingPoint;
+    // Shooting
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform shootingPoint;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float detectionRadius = 5f;
+    [SerializeField] private float fireRate;
+    [SerializeField] private bool isShooting;
+    [SerializeField] private bool isPlayerOnSight;
 
-
-    public LayerMask playerLayer;
-
-    public float detectionRadius = 5f;
-    public float fireRate;
-
-    private bool isShooting;
-    private bool isPlayerOnSight;
-    private float rotationSpeed;
+    // Rotation
+    [SerializeField] private float rotationSpeed;
 
     private void Awake()
     {
@@ -44,6 +45,8 @@ public class PolicemenAI : MonoBehaviour
     private void Update()
     {
         DetectPlayer();
+
+        _animator.SetBool("Shoot", isShooting);
 
         if (!_isMoving && !isPlayerOnSight)
         {
@@ -78,23 +81,15 @@ public class PolicemenAI : MonoBehaviour
         {
             StopCoroutine(MoveToDestination());
 
-            // Rotate towards the target
-            StartCoroutine(RotateTowardsTarget(position));
-
             StartCoroutine(Fire());
         }
     }
 
-    private IEnumerator RotateTowardsTarget(Vector3 targetPosition)
+    private void RotateTowardsTarget(Vector3 targetPosition)
     {
         Vector3 directionToTarget = (targetPosition - transform.position).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-
-        while (transform.rotation != targetRotation)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            yield return null;
-        }
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private IEnumerator Fire()
@@ -108,7 +103,7 @@ public class PolicemenAI : MonoBehaviour
             
             yield return new WaitForSeconds(1f / fireRate); // Adjust the delay between shots as needed
         }
-        isShooting = false;
+        //isShooting = false;
     }
 
     void DetectPlayer()
@@ -121,10 +116,13 @@ public class PolicemenAI : MonoBehaviour
             {
                 isPlayerOnSight = true;
 
+                RotateTowardsTarget(colliders[0].transform.position);
+
                 FollowTarget(colliders[0].transform.position);
             }
             else
             {
+                isShooting = false;
                 isPlayerOnSight = false;
                 _navMeshAgent.isStopped = false;
             }
