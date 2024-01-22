@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoneManager : MonoBehaviour
 {
-    [SerializeField] private int _completion = 0;
+    [Range(0f, 1f)] public float _completion = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,6 @@ public class ZoneManager : MonoBehaviour
 
     void UpdateCompletion()
     {
-        _completion = 0;
+        _completion = 0f;
     }
 }
