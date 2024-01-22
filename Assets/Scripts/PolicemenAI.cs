@@ -43,6 +43,7 @@ public class PolicemenAI : MonoBehaviour
     [Space(5)]
     [Range(0f, 360f)] public float viewAngle;
     public float viewDistance;
+
     private bool isPlayerOnSight;
 
     private void Awake()
@@ -82,11 +83,9 @@ public class PolicemenAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_isMoving)
+        if (!_isMoving && !isPlayerOnSight)
         {
             SetRandomDestinationInBounds();
-            
-
             StartCoroutine(MoveToDestination());
         }
     }
@@ -101,6 +100,8 @@ public class PolicemenAI : MonoBehaviour
             
             if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
             {
+                isPlayerOnSight = true;
+
                 // The target is within the AI's field of view
                 float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
 
@@ -112,7 +113,6 @@ public class PolicemenAI : MonoBehaviour
                 // If the Target is a Hiding Spot && if its position is not in the hiding list
                 if (target.CompareTag("Player"))
                 {
-                    isPlayerOnSight = true;
                     FollowTarget(target.transform.position);
                 }
             }
@@ -125,6 +125,10 @@ public class PolicemenAI : MonoBehaviour
         {
             isPlayerOnSight = false;
             _navMeshAgent.SetDestination(position);
+        }
+        else
+        {
+
         }
     }
 

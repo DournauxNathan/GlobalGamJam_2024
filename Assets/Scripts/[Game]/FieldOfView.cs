@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private LayerMask layerMask;
+    private Mesh mesh;
+    private float fov;
+    private float viewDistance;
+    private Vector3 origin;
+    private float startingAngle;
+    public Collider hitCollider;
+
+    public bool playerDetected = false;
+
+    public Transform player;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distance > 0)
+        {
+
+        }
+
+        if (playerDetected)
+        {
+        }
     }
+
+
 }
