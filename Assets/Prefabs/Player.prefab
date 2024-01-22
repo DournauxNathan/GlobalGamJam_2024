@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2946364197375052202}
   - component: {fileID: 9077769229767350042}
   - component: {fileID: 82121994163043667}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 3705453152923338497}
   - component: {fileID: 592357644345879932}
   - component: {fileID: 5464406089790152407}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 7975192113964731504}
   - component: {fileID: 7456504227927743055}
   - component: {fileID: 5326812324098492439}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,9 +361,10 @@ GameObject:
   - component: {fileID: 1577406678540692569}
   - component: {fileID: 2412210549337823914}
   - component: {fileID: 7021761677084490393}
-  m_Layer: 0
+  - component: {fileID: 7936737938454140033}
+  m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,6 +444,29 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!136 &7936737938454140033
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121662085680633670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.7650032
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.005662, z: 0}
 --- !u!1 &4198419183574743973
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +478,7 @@ GameObject:
   - component: {fileID: 8895878950655176012}
   - component: {fileID: 6200041416822576358}
   - component: {fileID: 2150051851721641343}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +554,7 @@ GameObject:
   - component: {fileID: 4661236753929227948}
   - component: {fileID: 8799985542991025095}
   - component: {fileID: 6785925411883372914}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,18 +568,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4777890017438485990}
-  m_LocalRotation: {x: 0.10365608, y: -0, z: -0, w: 0.99461323}
-  m_LocalPosition: {x: 0, y: 0, z: -0.145}
-  m_LocalScale: {x: 0.00871416, y: 0.004793398, z: 0.00871416}
+  m_LocalRotation: {x: 0.09506396, y: -0, z: -0, w: 0.9954712}
+  m_LocalPosition: {x: 0, y: 0, z: -0.14500014}
+  m_LocalScale: {x: 0.008714159, y: 0.004793398, z: 0.008714159}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2650859250865269467}
   m_Father: {fileID: 1059046059559107759}
-  m_LocalEulerAnglesHint: {x: 11.899, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.91, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.051, y: 0.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1.0510008, y: 0.35000026}
+  m_SizeDelta: {x: 120, y: 174.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4661236753929227948
 Canvas:
@@ -633,7 +657,7 @@ GameObject:
   - component: {fileID: 7463551148862149657}
   - component: {fileID: 3710398358399466338}
   - component: {fileID: 476469779480792491}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -789,7 +813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5209424082329339109}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +846,8 @@ GameObject:
   - component: {fileID: 2650859250865269467}
   - component: {fileID: 8438745519284017961}
   - component: {fileID: 830011655963402157}
-  m_Layer: 6
+  - component: {fileID: 1142612462644238407}
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,16 +862,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7719282732261561271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000007728805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5540178314582470288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8438745519284017961
 CanvasRenderer:
@@ -876,9 +901,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -328378524, guid: 7431676b41c28f143ab86506187e98d4, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -886,3 +911,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1142612462644238407
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719282732261561271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc6daa154fc848249b675eba5dac9f56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

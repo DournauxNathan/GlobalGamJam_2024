@@ -6,17 +6,26 @@ using UnityEditor;
 
 public class PolicemenAI : MonoBehaviour
 {
-    NavMeshAgent _navMeshAgent;
-    public bool _isMoving = false;
-    private Vector3 _destination;
+    [SerializeField] private Animator _animator;
+    private NavMeshAgent _navMeshAgent;
     private ZoneManager _zoneManager;
-    public float _waitDuration;
 
-    public LayerMask playerLayer;
+    // Movement
+    [SerializeField] private bool _isMoving = false;
+    [SerializeField] private float _waitDuration;
+    [SerializeField] private Vector3 _destination;
 
-    public float detectionRadius = 5f;
+    // Shooting
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform shootingPoint;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float detectionRadius = 5f;
+    [SerializeField] private float fireRate;
+    [SerializeField] private bool isShooting;
+    [SerializeField] private bool isPlayerOnSight;
 
-    private bool isPlayerOnSight;
+    // Rotation
+    [SerializeField] private float rotationSpeed;
 
     private void Awake()
     {
@@ -33,9 +42,11 @@ public class PolicemenAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         DetectPlayer();
+
+        _animator.SetBool("Shoot", isShooting);
 
         if (!_isMoving && !isPlayerOnSight)
         {
@@ -66,17 +77,90 @@ public class PolicemenAI : MonoBehaviour
 
     private void FollowTarget(Vector3 position)
     {
-        if (isPlayerOnSight)
+        if (isPlayerOnSight && !isShooting)
         {
-            _navMeshAgent.SetDestination(position);
+            StopCoroutine(MoveToDestination());
+
+            StartCoroutine(Fire());
         }
     }
+
+    private void RotateTowardsTarget(Vector3 targetPosition)
+    {
+        Vector3 directionToTarget = (targetPosition - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator Fire()
+    {
+        isShooting = true;
+
+        while (isPlayerOnSight)
+        {
+            _navMeshAgent.isStopped = true;
+            ShootProjectile();
+            
+            yield return new WaitForSeconds(1f / fireRate); // Adjust the delay between shots as needed
+        }
+        //isShooting = false;
+    }
+
+    void DetectPlayer()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
+
+        if (colliders.Length > 0)
+        {
+            if (Vector3.Distance(transform.position, colliders[0].transform.position) <= detectionRadius)
+            {
+                isPlayerOnSight = true;
+
+                RotateTowardsTarget(colliders[0].transform.position);
+
+                FollowTarget(colliders[0].transform.position);
+            }
+            else
+            {
+                isShooting = false;
+                isPlayerOnSight = false;
+                _navMeshAgent.isStopped = false;
+            }
+        }
+    }
+
+    void ShootProjectile()
+    {
+        // Instantiate the projectile at the shooting point's position and rotation
+        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+
+        // Access the rigidbody of the projectile and apply a forward force
+        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+
+        if (projectileRb != null)
+        {
+            projectileRb.AddForce(shootingPoint.forward * 1200, ForceMode.Force);
+        }
+        else
+        {
+            Debug.LogError("Projectile prefab does not have a Rigidbody component!");
+        }
+    }
+
 
     private IEnumerator MoveToDestination()
     {
         _isMoving = true;
 
-        _navMeshAgent.SetDestination(_destination);
+        if (!isPlayerOnSight)
+        {
+            _navMeshAgent.SetDestination(_destination);
+        }
+        else
+        {
+            yield return null;
+        }
+
 
         while (_navMeshAgent.velocity.Equals(Vector3.zero))
         {
@@ -89,33 +173,11 @@ public class PolicemenAI : MonoBehaviour
         _isMoving = false;
     }
 
-    void DetectPlayer()
-    {
-        // OverlapSphere to detect colliders within the specified radius
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
-
-        // Check if any colliders belong to the player layer
-        if (colliders.Length > 0)
-        {
-            if (Vector3.Distance(transform.position, colliders[0].transform.position) <= detectionRadius)
-            {
-                isPlayerOnSight = true;
-                FollowTarget(colliders[0].transform.position);
-            }
-            else
-            {
-                isPlayerOnSight = false;
-            }
-        }
-    }
-
     void OnDrawGizmosSelected()
     {
-        // Draw a wire sphere in the editor for better visualization
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
-
 
     // Calculate a direction vector from an angle in degrees
     public Vector3 DirFromAngle(float angleInDegrees, bool isGlobal)
