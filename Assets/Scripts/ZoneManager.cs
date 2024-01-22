@@ -20,6 +20,6 @@ public class ZoneManager : MonoBehaviour
 
     void UpdateCompletion()
     {
-        _completion = 
+        _completion = 0;
     }
 }
