@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float walkspeed = 5f;
+    public float sprintSpeed = 10f;
+
     public bool isWakling;
+    public bool isSprinting;
 
     [SerializeField] private Animator canAnimator;
     
+    private float speed;
     private CharacterController controller;
     private Vector3 inputVector;
     private float gravityModifier = -10f;
@@ -40,6 +44,17 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         controller.Move(movement * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+            speed = sprintSpeed;
+        }
+        else
+        {
+            isSprinting = false;
+            speed = walkspeed;
+        }
     }
 
     void HeadBobing()
