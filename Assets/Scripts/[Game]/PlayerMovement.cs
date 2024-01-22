@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public bool isWakling;
 
+    [SerializeField] private Animator canAnimator;
+    
     private CharacterController controller;
-
     private Vector3 inputVector;
     private float gravityModifier = -10f;
     private Vector3 movement;
@@ -21,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     {
         GetInput();
         Move();
+        HeadBobing();
+
+        canAnimator.SetBool("Walk", isWakling);
     }
 
     Vector3 GetInput()
@@ -35,6 +40,18 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         controller.Move(movement * Time.deltaTime);
+    }
+
+    void HeadBobing()
+    {
+        if (controller.velocity.magnitude > 0.1f)
+        {
+            isWakling = true;
+        }
+        else
+        {
+            isWakling = false;
+        }
     }
 }
 
