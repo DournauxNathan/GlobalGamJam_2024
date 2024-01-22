@@ -12,9 +12,15 @@ public class PolicemenAI : MonoBehaviour
     private ZoneManager _zoneManager;
     public float _waitDuration;
 
+    public GameObject projectilePrefab;
+
+    public Transform shootingPoint;
+
+
     public LayerMask playerLayer;
 
     public float detectionRadius = 5f;
+    public float fireRate;
 
     private bool isPlayerOnSight;
 
@@ -33,7 +39,7 @@ public class PolicemenAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         DetectPlayer();
 
@@ -68,9 +74,58 @@ public class PolicemenAI : MonoBehaviour
     {
         if (isPlayerOnSight)
         {
-            _navMeshAgent.SetDestination(position);
+            StopCoroutine(MoveToDestination());
+            StartCoroutine(Fire());
         }
     }
+
+    private IEnumerator Fire()
+    {
+        while (isPlayerOnSight)
+        {
+            Debug.Log("A");
+            //ShootProjectile();
+            yield return new WaitForSeconds(1f / fireRate); // Adjust the delay between shots as needed
+            Debug.Log("B");
+        }
+    }
+
+    void DetectPlayer()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
+
+        if (colliders.Length > 0)
+        {
+            if (Vector3.Distance(transform.position, colliders[0].transform.position) <= detectionRadius)
+            {
+                isPlayerOnSight = true;
+                FollowTarget(colliders[0].transform.position);
+            }
+            else
+            {
+                isPlayerOnSight = false;
+            }
+        }
+    }
+
+    void ShootProjectile()
+    {
+        // Instantiate the projectile at the shooting point's position and rotation
+        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+
+        // Access the rigidbody of the projectile and apply a forward force
+        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+
+        if (projectileRb != null)
+        {
+            projectileRb.AddForce(shootingPoint.forward * 1200, ForceMode.Force);
+        }
+        else
+        {
+            Debug.LogError("Projectile prefab does not have a Rigidbody component!");
+        }
+    }
+
 
     private IEnumerator MoveToDestination()
     {
@@ -89,33 +144,11 @@ public class PolicemenAI : MonoBehaviour
         _isMoving = false;
     }
 
-    void DetectPlayer()
-    {
-        // OverlapSphere to detect colliders within the specified radius
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
-
-        // Check if any colliders belong to the player layer
-        if (colliders.Length > 0)
-        {
-            if (Vector3.Distance(transform.position, colliders[0].transform.position) <= detectionRadius)
-            {
-                isPlayerOnSight = true;
-                FollowTarget(colliders[0].transform.position);
-            }
-            else
-            {
-                isPlayerOnSight = false;
-            }
-        }
-    }
-
     void OnDrawGizmosSelected()
     {
-        // Draw a wire sphere in the editor for better visualization
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
-
 
     // Calculate a direction vector from an angle in degrees
     public Vector3 DirFromAngle(float angleInDegrees, bool isGlobal)
