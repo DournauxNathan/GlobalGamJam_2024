@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.25
-        value: {x: 0, y: 1.95, z: 0.25}
+        value: {x: 0, y: 1.9, z: 0.25}
         inSlope: {x: 0, y: 0.014822125, z: 0}
         outSlope: {x: 0, y: 0.014822125, z: 0}
         tangentMode: 0
@@ -144,7 +144,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: 1.95
+        value: 1.9
         inSlope: 0.014822125
         outSlope: 0.014822125
         tangentMode: 0
