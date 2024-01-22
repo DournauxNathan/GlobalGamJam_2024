@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466914145501930001}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 35, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -82,14 +82,17 @@ MonoBehaviour:
   _animator: {fileID: 3451829269407870432}
   _isMoving: 0
   _waitDuration: 2
+  _destination: {x: 0, y: 0, z: 0}
   projectilePrefab: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
     type: 3}
   shootingPoint: {fileID: 8982017847781778580}
   playerLayer:
     serializedVersion: 2
     m_Bits: 2048
-  detectionRadius: 3
+  detectionRadius: 5
   fireRate: 5
+  isShooting: 0
+  isPlayerOnSight: 0
   rotationSpeed: 50
 --- !u!195 &7337273566766802270
 NavMeshAgent:
