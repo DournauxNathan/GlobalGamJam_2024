@@ -22,7 +22,9 @@ public class PolicemenAI : MonoBehaviour
     public float detectionRadius = 5f;
     public float fireRate;
 
+    private bool isShooting;
     private bool isPlayerOnSight;
+    private float rotationSpeed;
 
     private void Awake()
     {
@@ -72,22 +74,41 @@ public class PolicemenAI : MonoBehaviour
 
     private void FollowTarget(Vector3 position)
     {
-        if (isPlayerOnSight)
+        if (isPlayerOnSight && !isShooting)
         {
             StopCoroutine(MoveToDestination());
+
+            // Rotate towards the target
+            StartCoroutine(RotateTowardsTarget(position));
+
             StartCoroutine(Fire());
+        }
+    }
+
+    private IEnumerator RotateTowardsTarget(Vector3 targetPosition)
+    {
+        Vector3 directionToTarget = (targetPosition - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+
+        while (transform.rotation != targetRotation)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            yield return null;
         }
     }
 
     private IEnumerator Fire()
     {
+        isShooting = true;
+
         while (isPlayerOnSight)
         {
-            Debug.Log("A");
-            //ShootProjectile();
+            _navMeshAgent.isStopped = true;
+            ShootProjectile();
+            
             yield return new WaitForSeconds(1f / fireRate); // Adjust the delay between shots as needed
-            Debug.Log("B");
         }
+        isShooting = false;
     }
 
     void DetectPlayer()
@@ -99,11 +120,13 @@ public class PolicemenAI : MonoBehaviour
             if (Vector3.Distance(transform.position, colliders[0].transform.position) <= detectionRadius)
             {
                 isPlayerOnSight = true;
+
                 FollowTarget(colliders[0].transform.position);
             }
             else
             {
                 isPlayerOnSight = false;
+                _navMeshAgent.isStopped = false;
             }
         }
     }
@@ -131,7 +154,15 @@ public class PolicemenAI : MonoBehaviour
     {
         _isMoving = true;
 
-        _navMeshAgent.SetDestination(_destination);
+        if (!isPlayerOnSight)
+        {
+            _navMeshAgent.SetDestination(_destination);
+        }
+        else
+        {
+            yield return null;
+        }
+
 
         while (_navMeshAgent.velocity.Equals(Vector3.zero))
         {

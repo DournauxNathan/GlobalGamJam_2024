@@ -134,12 +134,12 @@ PrefabInstance:
     - target: {fileID: 3194513218959295131, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3648032217390795597, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3710398358399466338, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 3904932849326730553, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4070052413784473086, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 4121662085680633670, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4121662085680633670, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -219,7 +219,12 @@ PrefabInstance:
     - target: {fileID: 4198419183574743973, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777890017438485990, guid: d30f097db0201f549ab842d1f266f1ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5464406089790152407, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -229,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 6471347050373858131, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7021761677084490393, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -239,7 +244,12 @@ PrefabInstance:
     - target: {fileID: 7691990430203462400, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719282732261561271, guid: d30f097db0201f549ab842d1f266f1ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8177,7 +8187,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4352
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -8628,7 +8638,7 @@ GameObject:
   - component: {fileID: 463909591}
   - component: {fileID: 463909595}
   - component: {fileID: 463909596}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9064,7 +9074,7 @@ GameObject:
   - component: {fileID: 693176379}
   - component: {fileID: 693176383}
   - component: {fileID: 693176384}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10254,7 +10264,7 @@ GameObject:
   - component: {fileID: 875039137}
   - component: {fileID: 875039141}
   - component: {fileID: 875039142}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11083,7 +11093,7 @@ GameObject:
   - component: {fileID: 940966039}
   - component: {fileID: 940966043}
   - component: {fileID: 940966044}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11761,7 +11771,7 @@ GameObject:
   - component: {fileID: 1080530232}
   - component: {fileID: 1080530237}
   - component: {fileID: 1080530238}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12794,7 +12804,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 762420573}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
   detectionRadius: 10
   fireRate: 0.5
 --- !u!195 &1184386416
@@ -12857,7 +12867,7 @@ GameObject:
   - component: {fileID: 1187788271}
   - component: {fileID: 1187788275}
   - component: {fileID: 1187788276}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14305,7 +14315,7 @@ GameObject:
   - component: {fileID: 1931893562}
   - component: {fileID: 1931893566}
   - component: {fileID: 1931893567}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14991,7 +15001,7 @@ GameObject:
   - component: {fileID: 1995662003}
   - component: {fileID: 1995662007}
   - component: {fileID: 1995662008}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Buildings (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
