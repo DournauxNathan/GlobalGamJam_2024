@@ -221,10 +221,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5464406089790152407, guid: d30f097db0201f549ab842d1f266f1ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6471347050373858131, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021761677084490393, guid: d30f097db0201f549ab842d1f266f1ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7691990430203462400, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
@@ -8167,7 +8177,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 768
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -8425,7 +8435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8619338778009177133, guid: 47a3741b253f088469eedd6d403dd89a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762420573}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a3741b253f088469eedd6d403dd89a, type: 3}
 --- !u!4 &172146901 stripped
@@ -8614,7 +8628,7 @@ GameObject:
   - component: {fileID: 463909591}
   - component: {fileID: 463909595}
   - component: {fileID: 463909596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9050,7 +9064,7 @@ GameObject:
   - component: {fileID: 693176379}
   - component: {fileID: 693176383}
   - component: {fileID: 693176384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9864,6 +9878,37 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &762420572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762420573}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762420573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762420572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.119, y: -0, z: 0.514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1214252542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &831198146
 Mesh:
   m_ObjectHideFlags: 0
@@ -10209,7 +10254,7 @@ GameObject:
   - component: {fileID: 875039137}
   - component: {fileID: 875039141}
   - component: {fileID: 875039142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11038,7 +11083,7 @@ GameObject:
   - component: {fileID: 940966039}
   - component: {fileID: 940966043}
   - component: {fileID: 940966044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11716,7 +11761,7 @@ GameObject:
   - component: {fileID: 1080530232}
   - component: {fileID: 1080530237}
   - component: {fileID: 1080530238}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12744,10 +12789,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isMoving: 0
   _waitDuration: 2
+  projectilePrefab: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
+    type: 3}
+  shootingPoint: {fileID: 762420573}
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  detectionRadius: 5
+  detectionRadius: 10
+  fireRate: 0.5
 --- !u!195 &1184386416
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12808,7 +12857,7 @@ GameObject:
   - component: {fileID: 1187788271}
   - component: {fileID: 1187788275}
   - component: {fileID: 1187788276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13471,6 +13520,12 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &1214252542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8619338778009177133, guid: 47a3741b253f088469eedd6d403dd89a,
+    type: 3}
+  m_PrefabInstance: {fileID: 172146900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1248471214
 Mesh:
   m_ObjectHideFlags: 0
@@ -14229,7 +14284,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.7650032
@@ -14250,7 +14305,7 @@ GameObject:
   - component: {fileID: 1931893562}
   - component: {fileID: 1931893566}
   - component: {fileID: 1931893567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14936,7 +14991,7 @@ GameObject:
   - component: {fileID: 1995662003}
   - component: {fileID: 1995662007}
   - component: {fileID: 1995662008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Buildings (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
