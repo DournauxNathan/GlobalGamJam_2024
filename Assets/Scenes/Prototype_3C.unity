@@ -11131,8 +11131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  canAnimator: {fileID: 758872750}
   isWakling: 0
+  canAnimator: {fileID: 758872750}
 --- !u!114 &1689930766
 MonoBehaviour:
   m_ObjectHideFlags: 0
