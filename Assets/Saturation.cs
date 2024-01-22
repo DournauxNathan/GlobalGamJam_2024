@@ -19,7 +19,6 @@ public class Saturation : MonoBehaviour
         } else
         {
             _meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>().ToList();
-            Debug.Log("_meshRenderer found in children : " + _meshRenderers);
         }
 
         _zoneManager = gameObject.GetComponentInParent<ZoneManager>();
@@ -50,7 +49,7 @@ public class Saturation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_saturation != _zoneManager._completion)
+        if (_zoneManager != null && _saturation != _zoneManager._completion)
         {
             StartCoroutine(ChangeSaturation());
         }
@@ -64,15 +63,6 @@ public class Saturation : MonoBehaviour
 
         float startSaturation = _saturation;
         float endSaturation = _zoneManager._completion;
-
-        if (gameObject.name == "Building_J_prefab")
-        {
-            Debug.Log("_meshRenderers : ");
-            foreach (MeshRenderer meshRenderer in _meshRenderers)
-            {
-                Debug.Log(meshRenderer.name);
-            }
-        }
 
         while (time < duration)
         {
@@ -90,12 +80,5 @@ public class Saturation : MonoBehaviour
 
             yield return null;
         }
-
-        /*_saturation = endSaturation;
-        for (int i = 0; i < _meshRenderers.Count; i++)
-        {
-            _meshRenderers[i].material.SetFloat("_Saturation", _saturation);
-        }*/
-        // _meshRenderer.material.SetFloat("_Saturation", _saturation);
     }
 }
