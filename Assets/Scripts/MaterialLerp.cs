@@ -26,13 +26,6 @@ public class MaterialLerp : MonoBehaviour
         // Récupérez les matériaux initiaux du Renderer
         _sadMaterials = _meshRenderer.materials.ToList();
 
-        for (int i = 0; i < _sadMaterials.Count; i++)
-        {
-            Debug.Log("Sad " + i + ": " + _sadMaterials[i].name);
-        }
-
-        Debug.Log("Happy materials: " + _happyMaterials.Count);
-
         // Assurez-vous que les deux ensembles de matériaux ont la même longueur
         if (_sadMaterials.Count != _happyMaterials.Count)
         {
@@ -40,7 +33,7 @@ public class MaterialLerp : MonoBehaviour
             _canLerp = false;
         }
         
-        _standardShader = Shader.Find("Standard");
+        _standardShader = Shader.Find("Universal Render Pipeline/Lit");
     }
 
     // Update is called once per frame
@@ -55,11 +48,9 @@ public class MaterialLerp : MonoBehaviour
     {
         // On fait une copie des matériaux du Renderer
         Material[] lerpedMaterials = new Material[_sadMaterials.Count];
-        Debug.Log(lerpedMaterials);
 
         for (int i = 0; i < _sadMaterials.Count; i++)
         {
-            Debug.Log("Lerp " + i);
             lerpedMaterials[i] = new Material(_standardShader);
 
             // Interpolez entre les matériaux de chaque ensemble
@@ -72,7 +63,5 @@ public class MaterialLerp : MonoBehaviour
 
         // Appliquez les matériaux lerpés au Renderer du GameObject
         _meshRenderer.materials = lerpedMaterials;
-
-        _canLerp = false;
     }
 }
