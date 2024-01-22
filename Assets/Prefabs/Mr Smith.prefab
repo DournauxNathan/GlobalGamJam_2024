@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4029447895762548739}
   - component: {fileID: 5913721306287396981}
   - component: {fileID: 5593500057180908605}
+  - component: {fileID: 1519654472255336314}
   - component: {fileID: 5456511931821768003}
   m_Layer: 0
   m_Name: Mr Smith
@@ -131,6 +132,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1519654472255336314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839523049655067203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33713913a6335d24b92d4c77b3dfe536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoneManager: {fileID: 0}
+  _hp: 3
 --- !u!114 &5456511931821768003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,4 +159,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMoving: 0
+  _destination: {x: 0, y: 0, z: 0}
   _waitDuration: 3

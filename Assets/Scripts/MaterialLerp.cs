@@ -19,7 +19,7 @@ public class MaterialLerp : MonoBehaviour
     private Shader _standardShader;
 
     private bool _canLerp = true;
-    [SerializeField] ZoneManager _zoneManager;
+    ZoneManager _zoneManager;
 
     // Start is called before the first frame update
     void Start()

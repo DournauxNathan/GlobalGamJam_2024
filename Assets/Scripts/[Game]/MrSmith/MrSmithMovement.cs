@@ -6,21 +6,24 @@ using UnityEngine.AI;
 
 public class MrSmithMovement : MonoBehaviour
 {
-    NavMeshAgent _navMeshAgent;
+    public NavMeshAgent _navMeshAgent;
     public bool _isMoving = false;
-    private Vector3 _destination;
-    private ZoneManager _zoneManager;
+    public Vector3 _destination;
+    private MrSmith _mrSmith;
     public float _waitDuration;
+    private ZoneManager _zoneManager;
 
     private void Awake()
     {
         _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        _zoneManager = gameObject.GetComponentInParent<ZoneManager>();
+        _mrSmith = gameObject.GetComponent<MrSmith>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        _zoneManager = _mrSmith._zoneManager;
+
         // On sélectionne un spot aléatoire dans la zone
         SetRandomDestinationInBounds();
         StartCoroutine(MoveToDestination());
@@ -48,7 +51,7 @@ public class MrSmithMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (!_isMoving)
+        if (!_isMoving && _mrSmith._hp > 0)
         {
             SetRandomDestinationInBounds();
 

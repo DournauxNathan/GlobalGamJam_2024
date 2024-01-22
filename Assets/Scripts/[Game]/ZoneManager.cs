@@ -5,6 +5,8 @@ using UnityEngine;
 public class ZoneManager : MonoBehaviour
 {
     [Range(0f, 1f)] public float _completion = 0f;
+    private List<MrSmith> _mrSmiths = new List<MrSmith>();
+    private int _nbMrSmiths = 0;
 
     public Bounds _zoneBounds;
 
@@ -24,6 +26,15 @@ public class ZoneManager : MonoBehaviour
         }
     }
 
+    public void AddMrSmith(MrSmith mrSmith)
+    {
+        Debug.Log("Add MrSmith : " + mrSmith.name);
+        _mrSmiths.Add(
+            mrSmith
+        );
+        _nbMrSmiths++;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +47,18 @@ public class ZoneManager : MonoBehaviour
         
     }
 
-    void UpdateCompletion()
+    public void UpdateCompletion()
     {
-        _completion = 0f;
+        int totalAgents = _mrSmiths.Count;
+        int deadAgents = 0;
+        foreach (MrSmith mrSmith in _mrSmiths)
+        {
+            if (mrSmith._hp <= 0)
+            {
+                deadAgents++;
+            }
+        }
+
+        _completion = (float)deadAgents / (float)totalAgents;
     }
 }
