@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -585,7 +585,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316414330920453657}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -936,8 +936,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701355509761419361}
   m_HandleRect: {fileID: 4676119114309978039}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1165,6 +1165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072347054679995878, guid: 9f6fd5d8038b11e4ab9ce71776a855c0,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 6618209449317640248, guid: 9f6fd5d8038b11e4ab9ce71776a855c0,
         type: 3}
