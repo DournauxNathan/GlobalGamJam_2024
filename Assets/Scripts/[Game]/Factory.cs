@@ -47,7 +47,6 @@ public class Factory : MonoBehaviour
     {
         gate.SetBool("Open", true);
         onGateOpen?.Invoke();
-        
     }
 
     public void GameEnd()
