@@ -7,9 +7,6 @@ using static System.TimeZoneInfo;
 
 public class SkyboxSystem : MonoBehaviour
 {
-    public Material _skyboxHappy;
-    public Material _skyboxSad;
-
     public float _transitionTime = 2f;
 
     public PlayerController _playerController;
@@ -20,13 +17,12 @@ public class SkyboxSystem : MonoBehaviour
     void Start()
     {
         RenderSettings.skybox.SetFloat("_t", _playerController._currentZone._completion);
+        DynamicGI.UpdateEnvironment();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        // DynamicGI.UpdateEnvironment();
 
         // RenderSettings.skybox = Mathf.Lerp(_skyboxSad, _skyboxHappy, testCompletion);// _playerController._currentZone._completion);
         // LerpSkyboxMaterials(_skyboxSad, _skyboxHappy, testCompletion);// _playerController._currentZone._completion);
@@ -55,5 +51,7 @@ public class SkyboxSystem : MonoBehaviour
         }
 
         RenderSettings.skybox.SetFloat("_t", endT);
+
+        DynamicGI.UpdateEnvironment();
     }
 }
