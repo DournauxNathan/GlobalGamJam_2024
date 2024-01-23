@@ -194,11 +194,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3786746434940838088, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4070052413784473086, guid: d30f097db0201f549ab842d1f266f1ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -253,26 +248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[0]._audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[1]._audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[2]._audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
-    - target: {fileID: 8903139892894865630, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

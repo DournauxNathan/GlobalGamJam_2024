@@ -23,10 +23,12 @@ public class GunShooter : MonoBehaviour
             // Check for the fire input (you can customize this based on your input system)
             if (Input.GetButton("Fire1"))
             {
-                if (!_audioSource.isPlaying)
+                _audioSource?.PlayOneShot(onShootSFX);
+
+                /*if (!_audioSource.isPlaying)
                 {
                     _audioSource?.PlayOneShot(onShootSFX);
-                }
+                }*/
 
                 ShootProjectile();
                 nextFireTime = Time.time + 1f / fireRate;
