@@ -44,6 +44,12 @@ public class ZoneManager : MonoBehaviour
 
         _completion = (float)deadAgents / (float)totalAgents;
 
+
+        if (deadAgents == totalAgents)
+        {
+            UIManager.Instance.DistrictComplete();
+        }
+
         UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
 
         // On trigger l'event de completion de la zone
