@@ -51,17 +51,16 @@ public class UIManager : MonoBehaviour
 
     public void SubscribeZoneManager(ZoneManager zoneManager)
     {
+        Debug.Log(zoneManager);
+
         List<ZoneManager> managers = new List<ZoneManager>();
 
         managers.Add(zoneManager);
 
         maxZoneToClear = managers.Count();
         currentZoneCleared = 0;
-    }
 
-    public void SetDistrictTracker()
-    {
-        throw new NotImplementedException();
+        UpdateCompleteDistrict();
     }
 
     public void UpdateCompleteDistrict()

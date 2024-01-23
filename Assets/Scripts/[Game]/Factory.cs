@@ -17,7 +17,6 @@ public class Factory : MonoBehaviour
 
     private void Start()
     {
-        UIManager.Instance.SetDistrictTracker();
         currentHealth = maxHealth;
     }
 
@@ -31,7 +30,7 @@ public class Factory : MonoBehaviour
 
             currentHealth -= 10;
 
-            if (currentHealth <= 0 && !isGameOver)
+            if (currentHealth < 0 && !isGameOver)
             {
                 isGameOver = true;
                 onEnd?.Invoke();

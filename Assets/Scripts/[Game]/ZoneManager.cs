@@ -21,6 +21,11 @@ public class ZoneManager : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
     }
 
+    private void Start()
+    {
+        UIManager.Instance.SubscribeZoneManager(this);
+    }
+
     public void AddMrSmith(MrSmith mrSmith)
     {
         _mrSmiths.Add(
@@ -53,8 +58,6 @@ public class ZoneManager : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            Debug.Log("Player entered " + _districtName);
-            collider.GetComponent<Player>()._currentZone = this;
             collider.GetComponent<PlayerController>()._currentZone = this;
 
             UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
