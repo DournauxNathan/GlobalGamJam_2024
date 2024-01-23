@@ -7,6 +7,7 @@ using System;
 
 public class Factory : MonoBehaviour
 {
+    public static Action gameWin;
 
     public Animator gate;
 
@@ -21,7 +22,7 @@ public class Factory : MonoBehaviour
 
     private void Start()
     {
-        UIManager.allZoneComplete += OnGateOpen;
+        UIManager.allZoneCleared += OnGateOpen;
         currentHealth = maxHealth;
     }
 

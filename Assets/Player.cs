@@ -33,19 +33,19 @@ public class Player : MonoBehaviour
 
     public void UpdateRain()
     {
-        Debug.Log("Update rain !");
+        //Debug.Log("Update rain !");
         if (_rainEffect != null)
         {
             float rainIntensity = Mathf.Abs(_playerController._currentZone._completion * 800 - 800);
 
-            Debug.Log("Rain effect modifié (" + _playerController._currentZone.name + " : " + _playerController._currentZone._completion + ") : " + rainIntensity);
+            //Debug.Log("Rain effect modifié (" + _playerController._currentZone.name + " : " + _playerController._currentZone._completion + ") : " + rainIntensity);
 
             _rainEffect.SetFloat("Rain Intensity", rainIntensity);
         }
 
         if (_audioSourceRain != null)
         {
-            Debug.Log("Rain audio modifié (" + Mathf.Abs(_playerController._currentZone._completion - 1) + ")");
+            //Debug.Log("Rain audio modifié (" + Mathf.Abs(_playerController._currentZone._completion - 1) + ")");
             _audioSourceRain.volume = Mathf.Abs(_playerController._currentZone._completion - 1);
         }
         
