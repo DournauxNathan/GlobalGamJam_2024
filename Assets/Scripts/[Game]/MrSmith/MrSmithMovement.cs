@@ -61,7 +61,7 @@ public class MrSmithMovement : MonoBehaviour
 
         if (_animator != null)
         {
-            _animator.SetFloat("velocity", _navMeshAgent.velocity.magnitude);
+            // _animator.SetFloat("velocity", _navMeshAgent.velocity.magnitude);
         }
         
     }

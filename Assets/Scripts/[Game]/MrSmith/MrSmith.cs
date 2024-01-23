@@ -28,7 +28,7 @@ public class MrSmith : MonoBehaviour
         // Si c'est un tag "Projectile"
         if (collision.gameObject.CompareTag(projectileTag) && !_isDead)
         {
-            //Debug.Log("Touché !");
+            Debug.Log("Touché !");
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
