@@ -12,6 +12,9 @@ public class GunShooter : MonoBehaviour
 
     private float nextFireTime;
 
+    public AudioSource _audioSource;
+    public AudioClip onShootSFX;
+
     void Update()
     {
         // Check if it's time to shoot again
@@ -20,6 +23,10 @@ public class GunShooter : MonoBehaviour
             // Check for the fire input (you can customize this based on your input system)
             if (Input.GetButtonDown("Fire1"))
             {
+                if (!_audioSource.isPlaying)
+                {
+                    _audioSource?.PlayOneShot(onShootSFX);
+                }
 
                 ShootProjectile();
                 nextFireTime = Time.time + 1f / fireRate;

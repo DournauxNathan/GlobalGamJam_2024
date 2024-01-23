@@ -10,6 +10,8 @@ public class AmmosSelection : MonoBehaviour
 
     public List<Ammos> ammos;
 
+    public GunShooter gun;
+
     void SwitchToNextAmmo()
     {
         // Implement logic to switch to the next ammo type
@@ -56,12 +58,15 @@ public class AmmosSelection : MonoBehaviour
             if (currentAmmoIndex == i)
             {
                 ammos[currentAmmoIndex]._memeGif.enabled = true;
+                gun.onShootSFX = ammos[currentAmmoIndex]._audioClip;
             }
             else
             {
                 ammos[i]._memeGif.enabled = false;
             }
         }
+
+
     }
 }
 
@@ -69,4 +74,5 @@ public class AmmosSelection : MonoBehaviour
 public class Ammos
 {
     public Image _memeGif;
+    public AudioClip _audioClip;
 }

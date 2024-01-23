@@ -20,12 +20,6 @@ public class MrSmith : MonoBehaviour
         _zoneManager.AddMrSmith(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         // Si c'est un tag "Projectile"

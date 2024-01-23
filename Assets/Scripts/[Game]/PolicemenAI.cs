@@ -27,6 +27,8 @@ public class PolicemenAI : MonoBehaviour
     // Rotation
     [SerializeField] private float rotationSpeed;
 
+    public int _hp = 3;
+
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -147,7 +149,6 @@ public class PolicemenAI : MonoBehaviour
         }
     }
 
-
     private IEnumerator MoveToDestination()
     {
         _isMoving = true;
@@ -187,5 +188,29 @@ public class PolicemenAI : MonoBehaviour
             angleInDegrees += transform.eulerAngles.y;
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Si c'est un tag "Projectile"
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            // On détruit le projectile
+            Destroy(collision.gameObject);
+
+            _hp--;
+
+            if (_hp <= 0)
+            {
+                Destroy(this.gameObject);
+
+                // On change sa couleur pour du rose
+                //GetComponent<Renderer>().material.color = Color.magenta;
+
+                _navMeshAgent.isStopped = true;
+
+                _zoneManager.UpdateCompletion();
+            }
+        }
     }
 }
