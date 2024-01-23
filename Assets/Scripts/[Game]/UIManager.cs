@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+        else
+        {
+            Destroy(this);
+        }
 
         _soundManager = GetComponent<SoundManager>();
     }

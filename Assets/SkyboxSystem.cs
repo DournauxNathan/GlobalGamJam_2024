@@ -16,7 +16,7 @@ public class SkyboxSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RenderSettings.skybox.SetFloat("_t", _playerController._currentZone._completion);
+        RenderSettings.skybox.SetFloat("_t", 0);
         DynamicGI.UpdateEnvironment();
     }
 
