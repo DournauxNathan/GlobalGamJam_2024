@@ -5595,7 +5595,7 @@ GameObject:
   - component: {fileID: 1801045742}
   - component: {fileID: 1801045741}
   m_Layer: 0
-  m_Name: MusiqueTest
+  m_Name: Music Transitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
