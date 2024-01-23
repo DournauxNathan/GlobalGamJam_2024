@@ -3545,7 +3545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdacac13b981524448a1a74d0ef2ae2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gate: {fileID: 0}
+  gate: {fileID: 438020797}
   currentHealth: 0
   maxHealth: 100
   onGateOpen:

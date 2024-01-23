@@ -38,6 +38,7 @@ public class Factory : MonoBehaviour
             if (currentHealth < 0 && !isGameOver)
             {
                 isGameOver = true;
+                onEnd?.Invoke();
                 Invoke("GameEnd", 10f);
             }
         }
@@ -47,7 +48,6 @@ public class Factory : MonoBehaviour
     {
         gate.SetBool("Open", true);
         onGateOpen?.Invoke();
-        
     }
 
     public void GameEnd()
