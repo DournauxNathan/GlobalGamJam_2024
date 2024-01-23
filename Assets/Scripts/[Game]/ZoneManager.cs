@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ZoneManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ZoneManager : MonoBehaviour
     public string _districtName;
 
     private Player _player;
+
+    public UnityEvent _onCompletionChange;
 
     private void Awake()
     {
@@ -41,15 +44,22 @@ public class ZoneManager : MonoBehaviour
         _completion = (float)deadAgents / (float)totalAgents;
 
         UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
+
+        // On trigger l'event de completion de la zone
+        _onCompletionChange.Invoke();
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
+            Debug.Log("Player entered " + _districtName);
+            collider.GetComponent<Player>()._currentZone = this;
             collider.GetComponent<PlayerController>()._currentZone = this;
 
             UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
+
+            _onCompletionChange.Invoke();
         }
     }
 }
