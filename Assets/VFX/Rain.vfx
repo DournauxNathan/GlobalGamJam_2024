@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 750
     y: -154
     width: 615
-    height: 1685
+    height: 1664
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2535,7 +2535,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614900}
   m_ExposedName: Rain Intensity
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
