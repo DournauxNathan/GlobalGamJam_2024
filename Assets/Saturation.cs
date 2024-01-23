@@ -59,8 +59,8 @@ public class Saturation : MonoBehaviour
 
     IEnumerator ChangeSaturation()
     {
-        float time = 0f;
-        float duration = 0.8f;
+        /*float time = 0f;
+        float duration = 0.8f;*/
 
         float startSaturation = _saturation;
         float endSaturation = _zoneManager._completion;

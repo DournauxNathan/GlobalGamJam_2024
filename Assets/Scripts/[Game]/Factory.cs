@@ -11,10 +11,13 @@ public class Factory : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
-    public UnityEvent onEnd;
+    bool isGameOver;
+
+    public UnityEvent onGateOpen, onEnd;
 
     private void Start()
     {
+        UIManager.Instance.SetDistrictTracker();
         currentHealth = maxHealth;
     }
 
@@ -26,12 +29,13 @@ public class Factory : MonoBehaviour
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
-            currentHealth--;
+            currentHealth -= 10;
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !isGameOver)
             {
+                isGameOver = true;
                 onEnd?.Invoke();
-                Invoke("GamEnd", 20f);
+                Invoke("GameEnd", 10f);
             }
         }
     }

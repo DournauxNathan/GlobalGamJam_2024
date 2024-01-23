@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
+        currentHealth = maxHealth;
         UIManager.Instance.SetSlider(maxHealth, currentHealth);
     }
 

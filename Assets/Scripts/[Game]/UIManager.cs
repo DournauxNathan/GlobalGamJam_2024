@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,16 +18,16 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI districtNameText;
     public Slider completionSlider;
 
+    public TextMeshProUGUI completeDistrictTracker;
+    private int currentZoneCleared;
+    private int maxZoneToClear;
+
     private void Awake()
     {
         if (UIManager.Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this);
         }
     }
 
@@ -45,6 +47,26 @@ public class UIManager : MonoBehaviour
         districtNameText.text = districtName;
 
         completionSlider.value = completion;
+    }
+
+    public void SubscribeZoneManager(ZoneManager zoneManager)
+    {
+        List<ZoneManager> managers = new List<ZoneManager>();
+
+        managers.Add(zoneManager);
+
+        maxZoneToClear = managers.Count();
+        currentZoneCleared = 0;
+    }
+
+    public void SetDistrictTracker()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateCompleteDistrict()
+    {
+        completeDistrictTracker.text = currentZoneCleared + " / " + maxZoneToClear;
     }
 
 }
