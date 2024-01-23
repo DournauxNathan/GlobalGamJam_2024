@@ -58,7 +58,7 @@ public class ZoneManager : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<Player>()._currentZone = this;
+            collider.GetComponent<PlayerController>()._currentZone = this;
 
             UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
         }
