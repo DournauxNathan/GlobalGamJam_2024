@@ -470,7 +470,7 @@ MonoBehaviour:
   sadSlider: {fileID: 3501768514645250984}
   districtNameText: {fileID: 180456326056418615}
   completionSlider: {fileID: 7079088049642159614}
-  completeDistrictTracker: {fileID: 0}
+  completeDistrictTracker: {fileID: 7161375337764672201}
 --- !u!1 &510773634172157709
 GameObject:
   m_ObjectHideFlags: 0
