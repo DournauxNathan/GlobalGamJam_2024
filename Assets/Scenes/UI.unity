@@ -220,7 +220,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _smithConversionSound
       value: 
-      objectReference: {fileID: 8300000, guid: 58d3339c0c6cdd343a3f1b9c8d8adae5, type: 3}
+      objectReference: {fileID: 8300000, guid: 050a54538208d074db2925288e0f71fe, type: 3}
     - target: {fileID: 3823543700879962928, guid: 5ccab3cb12e984c4992b2416741e5ccd,
         type: 3}
       propertyPath: m_Pivot.x
@@ -320,6 +320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153425522578566479, guid: 5ccab3cb12e984c4992b2416741e5ccd,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8560376395145847842, guid: 5ccab3cb12e984c4992b2416741e5ccd,
         type: 3}
