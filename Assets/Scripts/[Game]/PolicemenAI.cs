@@ -61,9 +61,9 @@ public class PolicemenAI : MonoBehaviour
     {
         // On récupère un point aléatoire dans la boundingBox
         _destination = new Vector3(
-            Random.Range(_zoneManager._zoneBounds.min.x, _zoneManager._zoneBounds.max.x),
+            Random.Range(_zoneManager._boxCollider.bounds.min.x, _zoneManager._boxCollider.bounds.max.x),
             transform.position.y,
-            Random.Range(_zoneManager._zoneBounds.min.z, _zoneManager._zoneBounds.max.z)
+            Random.Range(_zoneManager._boxCollider.bounds.min.z, _zoneManager._boxCollider.bounds.max.z)
         );
 
         // On corrige la destination pour qu'elle soit atteignable par l'agent

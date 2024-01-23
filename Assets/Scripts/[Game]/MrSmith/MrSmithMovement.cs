@@ -32,11 +32,11 @@ public class MrSmithMovement : MonoBehaviour
 
     private void SetRandomDestinationInBounds()
     {
-        // On récupère un point aléatoire dans la boundingBox
-        _destination = new Vector3(
-            Random.Range(_zoneManager._zoneBounds.min.x, _zoneManager._zoneBounds.max.x),
+        // On récupère un point aléatoire dans le boxCollider de la zone
+        _destination = _zoneManager._boxCollider.bounds.center + new Vector3(
+            Random.Range(-_zoneManager._boxCollider.bounds.extents.x, _zoneManager._boxCollider.bounds.extents.x),
             transform.position.y,
-            Random.Range(_zoneManager._zoneBounds.min.z, _zoneManager._zoneBounds.max.z)
+            Random.Range(-_zoneManager._boxCollider.bounds.extents.z, _zoneManager._boxCollider.bounds.extents.z)
         );
 
         // On corrige la destination pour qu'elle soit atteignable par l'agent

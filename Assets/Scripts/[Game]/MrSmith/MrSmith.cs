@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MrSmith : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class MrSmith : MonoBehaviour
         // Si c'est un tag "Projectile"
         if (collision.collider.gameObject.CompareTag("Projectile") && !_isDead)
         {
+            Debug.Log("Touché !");
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
@@ -34,9 +36,9 @@ public class MrSmith : MonoBehaviour
             if (_hp <= 0)
             {
                 // On change sa couleur pour du rose
-                gameObject.GetComponentInChildren<Renderer>().material.color = Color.magenta;
+                // gameObject.GetComponentInChildren<Renderer>().material.color = Color.magenta;
 
-                _mrSmithMovement._navMeshAgent.SetDestination(transform.position);
+                _mrSmithMovement._navMeshAgent.isStopped = true;
 
                 _zoneManager.UpdateCompletion();
 

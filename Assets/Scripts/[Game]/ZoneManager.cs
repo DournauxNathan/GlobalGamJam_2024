@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ZoneManager : MonoBehaviour
 {
@@ -8,35 +9,21 @@ public class ZoneManager : MonoBehaviour
     private List<MrSmith> _mrSmiths = new List<MrSmith>();
     private int _nbMrSmiths = 0;
 
-    public Bounds _zoneBounds;
+    public BoxCollider _boxCollider;
     public string _districtName;
 
     private Player _player;
 
-    [SerializeField] private TextMeshProUGUI _textMeshPro;
+    public UnityEvent _onCompletionChange;
 
     private void Awake()
     {
-        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        _boxCollider = GetComponent<BoxCollider>();
+    }
 
-        if (_player._currentZone == this)
-        {
-            Debug.Log("On met à jour l'UI !");
-            _textMeshPro.text = "District : " + _districtName + " (" + Mathf.Floor(_completion) * 100 + "%)";
-        }
-
-        // On récupère la boundingBox de la zone en cherchant dans ses enfants le composant BoxCollider
-        foreach (BoxCollider boxCollider in gameObject.GetComponentsInChildren<BoxCollider>())
-        {
-            if (_zoneBounds == null)
-            {
-                _zoneBounds = boxCollider.bounds;
-            }
-            else
-            {
-                _zoneBounds.Encapsulate(boxCollider.bounds);
-            }
-        }
+    private void Start()
+    {
+        UIManager.Instance.SubscribeZoneManager(this);
     }
 
     public void AddMrSmith(MrSmith mrSmith)
@@ -45,18 +32,6 @@ public class ZoneManager : MonoBehaviour
             mrSmith
         );
         _nbMrSmiths++;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdateCompletion()
@@ -73,26 +48,21 @@ public class ZoneManager : MonoBehaviour
 
         _completion = (float)deadAgents / (float)totalAgents;
 
-        if (_player._currentZone == this)
-        {
-            _textMeshPro.text = "District : " + _districtName + " (" + ((int)Mathf.Round(_completion * 100f)) + "%)";
-            Debug.Log("On met à jour l'UI (fin d'un agent) : " + _districtName + " = " + _completion);
-        }
-        else
-        {
-            Debug.Log("Le player n'est pas dans la zone : " + _districtName);
-        }
+        UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
+
+        // On trigger l'event de completion de la zone
+        _onCompletionChange.Invoke();
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<Player>()._currentZone = this;
+            collider.GetComponent<PlayerController>()._currentZone = this;
 
-            _textMeshPro.text = "District : " + _districtName + " (" + ((int)Mathf.Round(_completion * 100f)) + "%)";
+            UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
 
-            Debug.Log("On met à jour l'UI (changement de zone) : " + _districtName + " = " + _completion);
+            _onCompletionChange.Invoke();
         }
     }
 }
