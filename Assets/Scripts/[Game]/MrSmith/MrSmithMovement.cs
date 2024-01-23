@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class MrSmithMovement : MonoBehaviour
 {
-    public NavMeshAgent _navMeshAgent;
+    [HideInInspector] public NavMeshAgent _navMeshAgent;
     public bool _isMoving = false;
     public Vector3 _destination;
     private MrSmith _mrSmith;

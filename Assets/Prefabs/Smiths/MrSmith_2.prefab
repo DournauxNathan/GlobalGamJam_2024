@@ -198,7 +198,7 @@ MonoBehaviour:
   _isMoving: 0
   _destination: {x: 0, y: 0, z: 0}
   _waitDuration: 3
-  _animator: {fileID: 0}
+  _animator: {fileID: 1716714477668236223}
 --- !u!82 &4054006712988289702
 AudioSource:
   m_ObjectHideFlags: 0
@@ -481,6 +481,12 @@ PrefabInstance:
 --- !u!4 &1666971252977422407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2560473760334501705, guid: ea51c68b84abbd9468f49487e060e9d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3795097236907722510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1716714477668236223 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2555821842574933169, guid: ea51c68b84abbd9468f49487e060e9d4,
     type: 3}
   m_PrefabInstance: {fileID: 3795097236907722510}
   m_PrefabAsset: {fileID: 0}
