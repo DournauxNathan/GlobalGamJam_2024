@@ -249,29 +249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[0].projectile
-      value: 
-      objectReference: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
-        type: 3}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[1].projectile
-      value: 
-      objectReference: {fileID: 6864772971346618449, guid: 59f1b655e676fe649973ed67482b723b,
-        type: 3}
-    - target: {fileID: 6965680037782277995, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: ammos.Array.data[2].projectile
-      value: 
-      objectReference: {fileID: 6864772971346618449, guid: 529453f237359f346a22b8fcfac1f186,
-        type: 3}
-    - target: {fileID: 9077769229767350042, guid: d30f097db0201f549ab842d1f266f1ce,
-        type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
