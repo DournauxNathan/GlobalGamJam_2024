@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using HelloGameDev;
+using System;
 
 public class Factory : MonoBehaviour
 {
+
+    public Animator gate;
+
     private ZoneManager zoneManager;
 
     public float currentHealth;
@@ -17,6 +21,7 @@ public class Factory : MonoBehaviour
 
     private void Start()
     {
+        UIManager.allZoneComplete += OnGateOpen;
         currentHealth = maxHealth;
     }
 
@@ -37,6 +42,12 @@ public class Factory : MonoBehaviour
                 Invoke("GameEnd", 10f);
             }
         }
+    }
+
+    public void OnGateOpen()
+    {
+        gate.SetBool("Open", true);
+        onGateOpen?.Invoke();
     }
 
     public void GameEnd()

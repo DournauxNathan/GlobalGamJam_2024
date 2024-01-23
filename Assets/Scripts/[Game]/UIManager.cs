@@ -9,6 +9,7 @@ using System;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    public static Action allZoneComplete;
 
     public RectTransform crosshair;
     public float crossHairFollowFactor;
@@ -18,9 +19,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI districtNameText;
     public Slider completionSlider;
 
+    List<ZoneManager> managers = new List<ZoneManager>();
     public TextMeshProUGUI completeDistrictTracker;
     private int currentZoneCleared;
     private int maxZoneToClear;
+
+    public SoundManager _soundManager;
 
     private void Awake()
     {
@@ -29,6 +33,8 @@ public class UIManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+
+        _soundManager = GetComponent<SoundManager>();
     }
 
     public void SetSlider(float maxValue, float currentValue)
@@ -51,10 +57,6 @@ public class UIManager : MonoBehaviour
 
     public void SubscribeZoneManager(ZoneManager zoneManager)
     {
-        Debug.Log(zoneManager);
-
-        List<ZoneManager> managers = new List<ZoneManager>();
-
         managers.Add(zoneManager);
 
         maxZoneToClear = managers.Count();
@@ -68,4 +70,16 @@ public class UIManager : MonoBehaviour
         completeDistrictTracker.text = currentZoneCleared + " / " + maxZoneToClear;
     }
 
+    public void DistrictComplete()
+    {
+        _soundManager.PlayDistrictVictorySound();
+
+        currentZoneCleared++;
+        UpdateCompleteDistrict();
+
+        if (currentZoneCleared == maxZoneToClear)
+        {
+            allZoneComplete?.Invoke();
+        }
+    }
 }
