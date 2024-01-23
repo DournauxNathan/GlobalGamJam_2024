@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ZoneManager : MonoBehaviour
@@ -9,9 +9,22 @@ public class ZoneManager : MonoBehaviour
     private int _nbMrSmiths = 0;
 
     public Bounds _zoneBounds;
+    public string _districtName;
+
+    private Player _player;
+
+    [SerializeField] private TextMeshProUGUI _textMeshPro;
 
     private void Awake()
     {
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+
+        if (_player._currentZone == this)
+        {
+            Debug.Log("On met à jour l'UI !");
+            _textMeshPro.text = "District : " + _districtName + " (" + Mathf.Floor(_completion) * 100 + "%)";
+        }
+
         // On récupère la boundingBox de la zone en cherchant dans ses enfants le composant BoxCollider
         foreach (BoxCollider boxCollider in gameObject.GetComponentsInChildren<BoxCollider>())
         {
@@ -28,7 +41,6 @@ public class ZoneManager : MonoBehaviour
 
     public void AddMrSmith(MrSmith mrSmith)
     {
-        Debug.Log("Add MrSmith : " + mrSmith.name);
         _mrSmiths.Add(
             mrSmith
         );
@@ -60,5 +72,27 @@ public class ZoneManager : MonoBehaviour
         }
 
         _completion = (float)deadAgents / (float)totalAgents;
+
+        if (_player._currentZone == this)
+        {
+            _textMeshPro.text = "District : " + _districtName + " (" + ((int)Mathf.Round(_completion * 100f)) + "%)";
+            Debug.Log("On met à jour l'UI (fin d'un agent) : " + _districtName + " = " + _completion);
+        }
+        else
+        {
+            Debug.Log("Le player n'est pas dans la zone : " + _districtName);
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            collider.GetComponent<Player>()._currentZone = this;
+
+            _textMeshPro.text = "District : " + _districtName + " (" + ((int)Mathf.Round(_completion * 100f)) + "%)";
+
+            Debug.Log("On met à jour l'UI (changement de zone) : " + _districtName + " = " + _completion);
+        }
     }
 }
