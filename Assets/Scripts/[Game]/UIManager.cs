@@ -32,11 +32,12 @@ public class UIManager : MonoBehaviour
     public void SetSlider(float maxValue, float currentValue)
     {
         sadSlider.maxValue = maxValue;
+        sadSlider.value = currentValue;
     }
 
-    public void UpdateSlider()
+    public void UpdateSlider(float value)
     {
-        sadSlider.value = sadSlider.value / sadSlider.maxValue;
+        sadSlider.value = value / sadSlider.maxValue;
     }
 
     public void SetDistrictInfo(string districtName, float completion)

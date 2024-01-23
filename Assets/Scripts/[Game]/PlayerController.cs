@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.collider.gameObject);
 
             currentHealth--;
-            UIManager.Instance.UpdateSlider();
+            UIManager.Instance.UpdateSlider(currentHealth);
 
             if (currentHealth <= 0)
             {
