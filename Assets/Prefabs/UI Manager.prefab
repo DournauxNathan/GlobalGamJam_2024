@@ -473,6 +473,7 @@ MonoBehaviour:
   districtNameText: {fileID: 180456326056418615}
   completionSlider: {fileID: 7079088049642159614}
   completeDistrictTracker: {fileID: 7161375337764672201}
+  _soundManager: {fileID: 0}
 --- !u!82 &8153425522578566479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -485,7 +486,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -581,8 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c3e4933801ccc46a52e3f2686e8f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smithConversionSound: {fileID: 0}
-  _districtVictorySound: {fileID: 0}
+  _smithConversionSound: {fileID: 8300000, guid: 050a54538208d074db2925288e0f71fe,
+    type: 3}
+  _districtVictorySound: {fileID: 8300000, guid: b27ab9852addabc41b09cd3133ff42ce,
+    type: 3}
   _victorySound: {fileID: 0}
 --- !u!1 &510773634172157709
 GameObject:
