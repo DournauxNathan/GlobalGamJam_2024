@@ -163,8 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4d943baabfb894aa36e8bb8b045acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
-    type: 3}
+  projectilePrefab: {fileID: 0}
   shootingPoint: {fileID: 5209424082329339109}
   projectileSpeed: 1500
   fireRate: 5
@@ -521,10 +520,16 @@ MonoBehaviour:
   ammos:
   - _memeGif: {fileID: 830011655963402157}
     _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
+    projectile: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
+      type: 3}
   - _memeGif: {fileID: 4377528976482270579}
     _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
+    projectile: {fileID: 6864772971346618449, guid: 59f1b655e676fe649973ed67482b723b,
+      type: 3}
   - _memeGif: {fileID: 3417779063722471958}
     _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
+    projectile: {fileID: 6864772971346618449, guid: 529453f237359f346a22b8fcfac1f186,
+      type: 3}
   gun: {fileID: 9077769229767350042}
 --- !u!114 &1522111698042642168
 MonoBehaviour:
