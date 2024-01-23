@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
 
     public Slider sadSlider;
 
+    public TextMeshProUGUI districtNameText;
+    public Slider completionSlider;
+
     private void Awake()
     {
         if (UIManager.Instance == null)
@@ -33,10 +36,14 @@ public class UIManager : MonoBehaviour
 
     public void UpdateSlider()
     {
-        temperatureText.text = LevelManager.instance.temperature.ToString("0") + "°C";
-        temperatureBar.fillAmount = LevelManager.instance.temperature / LevelManager.instance.maxTemperature;
+        sadSlider.value = sadSlider.value / sadSlider.maxValue;
     }
 
+    public void SetDistrictInfo(string districtName, float completion)
+    {
+        districtNameText.text = districtName;
 
+        completionSlider.value = completion;
+    }
 
 }
