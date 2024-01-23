@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    public ZoneManager _currentZone;
+
     [SerializeField] private Animator _animator;
     private CharacterController controller;
 

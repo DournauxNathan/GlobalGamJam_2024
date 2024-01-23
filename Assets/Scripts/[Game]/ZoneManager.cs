@@ -51,7 +51,7 @@ public class ZoneManager : MonoBehaviour
 
         _completion = (float)deadAgents / (float)totalAgents;
 
-        UIManager.Instance.SetDistrictInfo(_districtName, _completion);
+        UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -60,7 +60,7 @@ public class ZoneManager : MonoBehaviour
         {
             collider.GetComponent<Player>()._currentZone = this;
 
-            UIManager.Instance.SetDistrictInfo(_districtName, _completion);
+            UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
         }
     }
 }
