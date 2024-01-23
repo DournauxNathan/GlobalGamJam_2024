@@ -9,6 +9,7 @@ public class MrSmith : MonoBehaviour
     private MrSmithMovement _mrSmithMovement;
     public int _hp = 3;
     private bool _isDead = false;
+    public string projectileTag;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class MrSmith : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Si c'est un tag "Projectile"
-        if (collision.collider.gameObject.CompareTag("Projectile") && !_isDead)
+        if (collision.gameObject.CompareTag(projectileTag) && !_isDead)
         {
             //Debug.Log("Touché !");
             // On détruit le projectile

@@ -59,6 +59,7 @@ public class AmmosSelection : MonoBehaviour
             {
                 ammos[currentAmmoIndex]._memeGif.enabled = true;
                 gun.onShootSFX = ammos[currentAmmoIndex]._audioClip;
+                gun.projectilePrefab = ammos[currentAmmoIndex].projectile;
             }
             else
             {
@@ -75,4 +76,5 @@ public class Ammos
 {
     public Image _memeGif;
     public AudioClip _audioClip;
+    public GameObject projectile;
 }
