@@ -1,30 +1,67 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicTransitor : MonoBehaviour
 {
-    public AudioSource sadAudioSource;
-    public AudioSource happyAudioSource;
+    public AudioSource sadAS, happyAS;
 
-    public AudioClip sadMusic;
-    public AudioClip happyMusic;
+    float defaultVolume = 1f;
+    float transitionTime = 1.25f;
 
-    public bool test;
-
-    private void Update()
+    private void Start()
     {
-        if (test)
+        UIManager.zoneCleared += ChangeClip;
+    }
+
+    public void ChangeClip()
+    {
+        AudioSource nowPlaying = sadAS;
+        AudioSource target = happyAS;
+
+        if (nowPlaying.isPlaying == false)
         {
-            test = false;
-            SwitchAudiosource();
+            nowPlaying = happyAS;
+            target = sadAS;
+
         }
+
+        StartCoroutine(MixSource(nowPlaying, target));
+
+        Debug.Log("Currently playing" + nowPlaying.clip);
     }
 
-    public void SwitchAudiosource()
+    public void Mute()
     {
-        sadAudioSource.volume = 0;
-        happyAudioSource.volume = 1;
-
+        sadAS.enabled = true;
+        happyAS.enabled = true;
     }
+
+    private IEnumerator MixSource(AudioSource nowPlaying, AudioSource target)
+    {
+        float percentage = 0;
+
+        while (nowPlaying.volume >0)
+        {
+            nowPlaying.volume = Mathf.Lerp(defaultVolume, 0, percentage);
+            percentage += Time.deltaTime / transitionTime;
+            yield return null;
+        }
+
+        nowPlaying.Pause();
+        if (target.isPlaying == false)
+        {
+            target.Play();
+        }
+        target.UnPause();
+        percentage = 0;
+
+        while (target.volume < defaultVolume)
+        {
+            target.volume = Mathf.Lerp(0, defaultVolume, percentage);
+            percentage += Time.deltaTime / transitionTime;
+            yield return null;
+        }
+
+;    }
 }

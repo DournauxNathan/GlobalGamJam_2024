@@ -9,7 +9,7 @@ using System;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    public static Action allZoneComplete;
+    public static Action zoneCleared, allZoneCleared;
 
     public RectTransform crosshair;
     public float crossHairFollowFactor;
@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private int maxZoneToClear;
 
     public SoundManager _soundManager;
+    public bool updateMusic;
 
     private void Awake()
     {
@@ -73,13 +74,18 @@ public class UIManager : MonoBehaviour
     public void DistrictComplete()
     {
         _soundManager.PlayDistrictVictorySound();
+        zoneCleared?.Invoke();
 
         currentZoneCleared++;
+        updateMusic = true;
+
+        Debug.Log("");
+
         UpdateCompleteDistrict();
 
         if (currentZoneCleared == maxZoneToClear)
         {
-            allZoneComplete?.Invoke();
+            allZoneCleared?.Invoke();
         }
     }
 }

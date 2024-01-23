@@ -12,6 +12,7 @@ public class ZoneManager : MonoBehaviour
     public string _districtName;
 
     public UnityEvent _onCompletionChange;
+    bool updateMusic = false;
 
     private void Awake()
     {
@@ -63,6 +64,17 @@ public class ZoneManager : MonoBehaviour
             collider.GetComponent<PlayerController>()._currentZone = this;
 
             UIManager.Instance?.SetDistrictInfo(_districtName, _completion);
+
+            if (_completion < 1 && UIManager.Instance.updateMusic)
+            {
+                UIManager.Instance.updateMusic = false;
+                UIManager.zoneCleared?.Invoke();
+            }
+            else if (_completion >= 1 && !UIManager.Instance.updateMusic)
+            {
+                UIManager.Instance.updateMusic = true;
+                UIManager.zoneCleared?.Invoke();
+            }
 
             _onCompletionChange.Invoke();
         }
