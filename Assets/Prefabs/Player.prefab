@@ -194,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.138
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -517,11 +517,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammos:
   - _memeGif: {fileID: 830011655963402157}
-    _audioClip: {fileID: 8300000, guid: 7c8eded3dddaa9141b059724ee22e713, type: 3}
+    _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
   - _memeGif: {fileID: 4377528976482270579}
-    _audioClip: {fileID: 8300000, guid: 66146764cf03e124fa0ceaca7c88e95c, type: 3}
+    _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
   - _memeGif: {fileID: 3417779063722471958}
-    _audioClip: {fileID: 8300000, guid: fd72e5366c7ac8c46b551d0d768104fc, type: 3}
+    _audioClip: {fileID: 8300000, guid: 2faae8815e673474789a1a30fbeb88a2, type: 3}
   gun: {fileID: 9077769229767350042}
 --- !u!1 &4777890017438485990
 GameObject:
@@ -672,7 +672,7 @@ Camera:
   m_GameObject: {fileID: 6471347050373858131}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
