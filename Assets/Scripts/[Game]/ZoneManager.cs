@@ -7,12 +7,9 @@ public class ZoneManager : MonoBehaviour
 {
     [Range(0f, 1f)] public float _completion = 0f;
     private List<MrSmith> _mrSmiths = new List<MrSmith>();
-    private int _nbMrSmiths = 0;
 
-    public BoxCollider _boxCollider;
+    [HideInInspector] public BoxCollider _boxCollider;
     public string _districtName;
-
-    private Player _player;
 
     public UnityEvent _onCompletionChange;
 
@@ -31,7 +28,6 @@ public class ZoneManager : MonoBehaviour
         _mrSmiths.Add(
             mrSmith
         );
-        _nbMrSmiths++;
     }
 
     public void UpdateCompletion()
