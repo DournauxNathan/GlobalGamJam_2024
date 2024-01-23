@@ -38,6 +38,7 @@ public class Factory : MonoBehaviour
             if (currentHealth < 0 && !isGameOver)
             {
                 isGameOver = true;
+                onEnd?.Invoke();
                 Invoke("GameEnd", 10f);
             }
         }
