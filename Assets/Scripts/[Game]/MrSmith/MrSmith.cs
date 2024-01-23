@@ -34,13 +34,15 @@ public class MrSmith : MonoBehaviour
             if (_hp <= 0)
             {
                 // On change sa couleur pour du rose
-                gameObject.GetComponent<Renderer>().material.color = Color.magenta;
+                gameObject.GetComponentInChildren<Renderer>().material.color = Color.magenta;
 
                 _mrSmithMovement._navMeshAgent.SetDestination(transform.position);
 
                 _zoneManager.UpdateCompletion();
 
-                
+                _isDead = true;
+                _mrSmithMovement._animator.SetBool("isDead", true);
+                _mrSmithMovement._animator.SetFloat("velocity", 0f);
             }
         }
     }

@@ -12,6 +12,7 @@ public class MrSmithMovement : MonoBehaviour
     private MrSmith _mrSmith;
     public float _waitDuration;
     private ZoneManager _zoneManager;
+    public Animator _animator;
 
     private void Awake()
     {
@@ -57,6 +58,12 @@ public class MrSmithMovement : MonoBehaviour
 
             StartCoroutine(MoveToDestination());
         }
+
+        if (_animator != null)
+        {
+            _animator.SetFloat("velocity", _navMeshAgent.velocity.magnitude);
+        }
+        
     }
 
     private IEnumerator MoveToDestination()
