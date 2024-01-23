@@ -206,6 +206,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3672001610450153243, guid: 5ccab3cb12e984c4992b2416741e5ccd,
+        type: 3}
+      propertyPath: _victorySound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672001610450153243, guid: 5ccab3cb12e984c4992b2416741e5ccd,
+        type: 3}
+      propertyPath: _districtVictorySound
+      value: 
+      objectReference: {fileID: 8300000, guid: b27ab9852addabc41b09cd3133ff42ce, type: 3}
+    - target: {fileID: 3672001610450153243, guid: 5ccab3cb12e984c4992b2416741e5ccd,
+        type: 3}
+      propertyPath: _smithConversionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 58d3339c0c6cdd343a3f1b9c8d8adae5, type: 3}
     - target: {fileID: 3823543700879962928, guid: 5ccab3cb12e984c4992b2416741e5ccd,
         type: 3}
       propertyPath: m_Pivot.x

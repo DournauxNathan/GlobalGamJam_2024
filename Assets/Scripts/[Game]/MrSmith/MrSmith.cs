@@ -36,7 +36,7 @@ public class MrSmith : MonoBehaviour
             if (_hp <= 0)
             {
                 // On change sa couleur pour du rose
-                // gameObject.GetComponentInChildren<Renderer>().material.color = Color.magenta;
+                UIManager.Instance._soundManager.PlaySmithConversionSound();
 
                 _mrSmithMovement._navMeshAgent.isStopped = true;
 

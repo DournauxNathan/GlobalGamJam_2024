@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     private int currentZoneCleared;
     private int maxZoneToClear;
 
+    public SoundManager _soundManager;
+
     private void Awake()
     {
         if (UIManager.Instance == null)
@@ -31,6 +33,8 @@ public class UIManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+
+        _soundManager = GetComponent<SoundManager>();
     }
 
     public void SetSlider(float maxValue, float currentValue)
@@ -68,6 +72,8 @@ public class UIManager : MonoBehaviour
 
     public void DistrictComplete()
     {
+        _soundManager.PlayDistrictVictorySound();
+
         currentZoneCleared++;
         UpdateCompleteDistrict();
 
