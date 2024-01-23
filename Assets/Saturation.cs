@@ -9,6 +9,7 @@ public class Saturation : MonoBehaviour
     private List<MeshRenderer> _meshRenderers = new List<MeshRenderer>();
     ZoneManager _zoneManager;
     [SerializeField] private AnimationCurve _lerpSaturationCurve;
+    private bool _stopSaturation = false;
 
 
     private void Awake()
@@ -49,7 +50,7 @@ public class Saturation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_zoneManager != null && _saturation != _zoneManager._completion)
+        if (_zoneManager != null && _saturation != _zoneManager._completion && !_stopSaturation)
         {
             StartCoroutine(ChangeSaturation());
         }
@@ -64,7 +65,23 @@ public class Saturation : MonoBehaviour
         float startSaturation = _saturation;
         float endSaturation = _zoneManager._completion;
 
-        while (time < duration)
+        for (int i = 0; i < _meshRenderers.Count; i++)
+        {
+            for (int j = 0; j < _meshRenderers[i].materials.Length; j++)
+            {
+                _meshRenderers[i].materials[j].SetFloat("_Saturation", endSaturation);
+            }
+        }
+
+        yield return null;
+
+        if (endSaturation == 1)
+        {
+            _stopSaturation = true;
+        }
+        
+
+        /*while (time < duration)
         {
             _saturation = Mathf.Lerp(startSaturation, endSaturation, _lerpSaturationCurve.Evaluate(time / duration));
 
@@ -74,11 +91,13 @@ public class Saturation : MonoBehaviour
                 {
                     _meshRenderers[i].materials[j].SetFloat("_Saturation", _saturation);
                 }
+
+                yield return null;
             }
 
             time += Time.deltaTime;
 
             yield return null;
-        }
+        }*/
     }
 }

@@ -8,25 +8,14 @@ public class ZoneManager : MonoBehaviour
     private List<MrSmith> _mrSmiths = new List<MrSmith>();
     private int _nbMrSmiths = 0;
 
-    public Bounds _zoneBounds;
+    public BoxCollider _boxCollider;
     public string _districtName;
 
     private Player _player;
 
     private void Awake()
     {
-         // On récupère la boundingBox de la zone en cherchant dans ses enfants le composant BoxCollider
-        foreach (BoxCollider boxCollider in gameObject.GetComponentsInChildren<BoxCollider>())
-        {
-            if (_zoneBounds == null)
-            {
-                _zoneBounds = boxCollider.bounds;
-            }
-            else
-            {
-                _zoneBounds.Encapsulate(boxCollider.bounds);
-            }
-        }
+        _boxCollider = GetComponent<BoxCollider>();
     }
 
     public void AddMrSmith(MrSmith mrSmith)
