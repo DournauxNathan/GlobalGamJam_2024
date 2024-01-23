@@ -10,15 +10,21 @@ public class MusicTransitor : MonoBehaviour
     public AudioClip sadMusic;
     public AudioClip happyMusic;
 
-    private void Start()
+    public bool test;
+
+    private void Update()
     {
-        _audioSource.clip = sadMusic;
-        _audioSource.Play();
+        if (test)
+        {
+            test = false;
+            SwitchAudiosource();
+        }
     }
 
     public void SwitchAudiosource()
     {
-        _audioSource.clip = sadMusic;
-        _audioSource.Play();
+        sadAudioSource.volume = 0;
+        happyAudioSource.volume = 1;
+
     }
 }
