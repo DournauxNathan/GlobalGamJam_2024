@@ -57,6 +57,7 @@ public class AmmosSelection : MonoBehaviour
             if (currentAmmoIndex == i)
             {
                 ammos[currentAmmoIndex]._memeGif.enabled = true;
+                iconHint.sprite = ammos[currentAmmoIndex].emoji;
                 gun.onShootSFX = ammos[currentAmmoIndex]._audioClip;
                 gun.projectilePrefab = ammos[currentAmmoIndex].projectile;
             }
