@@ -1138,6 +1138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits button
       objectReference: {fileID: 0}
+    - target: {fileID: 8291798098523006525, guid: 9f6fd5d8038b11e4ab9ce71776a855c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2047,7 +2052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 636.125, y: -149.90001}
+  m_AnchoredPosition: {x: 563.4, y: -149.90001}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114194328
@@ -2495,7 +2500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661.875, y: -180.625}
+  m_AnchoredPosition: {x: -589.6, y: -180.625}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516598527
@@ -3401,6 +3406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Play button
       objectReference: {fileID: 0}
+    - target: {fileID: 4103085141919786829, guid: d7e1c272529866d448f99b86770b8fbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7106085890239581370, guid: d7e1c272529866d448f99b86770b8fbb,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -3869,7 +3879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
