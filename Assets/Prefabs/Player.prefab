@@ -356,8 +356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentZone: {fileID: 0}
   _animator: {fileID: 476469779480792491}
-  walkspeed: 5
-  sprintSpeed: 10
+  walkspeed: 10
+  sprintSpeed: 20
   maxHealth: 50
 --- !u!114 &2412210549337823914
 MonoBehaviour:
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 4347258118885739883}
   - component: {fileID: 5232397238806317686}
   - component: {fileID: 2676982531850030161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,6 +1451,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4002648417120744007, guid: fba8afabaa4f5154692054f733d979e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: -3224888755555040645, guid: fba8afabaa4f5154692054f733d979e9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1466,10 +1471,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Memeoblast_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fba8afabaa4f5154692054f733d979e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: fba8afabaa4f5154692054f733d979e9,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0531
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540161155617258199, guid: fba8afabaa4f5154692054f733d979e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: fba8afabaa4f5154692054f733d979e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8390750917673319511, guid: fba8afabaa4f5154692054f733d979e9,
         type: 3}

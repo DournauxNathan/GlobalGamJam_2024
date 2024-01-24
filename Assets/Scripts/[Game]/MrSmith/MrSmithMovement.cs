@@ -40,11 +40,11 @@ public class MrSmithMovement : MonoBehaviour
         );
 
         // On corrige la destination pour qu'elle soit atteignable par l'agent
-        NavMeshHit hit;
+        /*NavMeshHit hit;
         if (NavMesh.SamplePosition(_destination, out hit, 1f, NavMesh.AllAreas))
         {
             _destination = hit.position;
-        }
+        }*/
 
         // On corrige la destination pour qu'elle soit à la hauteur de l'agent
         _destination.y = transform.position.y;
