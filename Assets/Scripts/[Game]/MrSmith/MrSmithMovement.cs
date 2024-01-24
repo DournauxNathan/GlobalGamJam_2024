@@ -40,11 +40,11 @@ public class MrSmithMovement : MonoBehaviour
         );
 
         // On corrige la destination pour qu'elle soit atteignable par l'agent
-        /*NavMeshHit hit;
+        NavMeshHit hit;
         if (NavMesh.SamplePosition(_destination, out hit, 1f, NavMesh.AllAreas))
         {
             _destination = hit.position;
-        }*/
+        }
 
         // On corrige la destination pour qu'elle soit à la hauteur de l'agent
         _destination.y = transform.position.y;
@@ -70,13 +70,15 @@ public class MrSmithMovement : MonoBehaviour
     {
         _isMoving = true;
         _navMeshAgent.SetDestination(_destination);
-        while (_navMeshAgent.velocity.Equals(Vector3.zero))
+
+        // Tant que l'agent n'a pas atteint sa destination
+        while (_navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance)
         {
             yield return null;
         }
 
         // Wait
-        yield return new WaitForSeconds(_waitDuration);
+        // yield return new WaitForSeconds(_waitDuration);
 
         _isMoving = false;
     }
