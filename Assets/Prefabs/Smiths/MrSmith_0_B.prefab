@@ -423,26 +423,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: mini simple demo_04
       objectReference: {fileID: 0}
-    - target: {fileID: 6614176577886102763, guid: c161c997c07308740af96a685231f764,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 69ce5dd747afb75488c00ed0f554f1d6, type: 2}
-    - target: {fileID: 7542169663851219856, guid: c161c997c07308740af96a685231f764,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7542169663851219856, guid: c161c997c07308740af96a685231f764,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7542169663851219856, guid: c161c997c07308740af96a685231f764,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.33
-      objectReference: {fileID: 0}
     - target: {fileID: 7542169663851219856, guid: c161c997c07308740af96a685231f764,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -492,11 +472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7542169663851219856, guid: c161c997c07308740af96a685231f764,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
