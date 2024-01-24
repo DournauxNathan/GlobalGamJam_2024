@@ -60,10 +60,7 @@ public class Saturation : MonoBehaviour
 
     public void ChangeSaturation(float to = -1f)
     {
-        float startSaturation = _saturation;
         float endSaturation = (to == -1f) ? _zoneManager._completion : to;
-
-        Debug.Log("Changement saturation de " + startSaturation + " à " + endSaturation);
 
         for (int i = 0; i < _meshRenderers.Count; i++)
         {
@@ -94,7 +91,6 @@ public class Saturation : MonoBehaviour
 
     public void SetSaturation(float saturation)
     {
-        Debug.Log("Changement saturation à " + saturation + " demandé");
         ChangeSaturation(saturation);
     }
 }
