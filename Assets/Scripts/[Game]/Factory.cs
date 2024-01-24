@@ -1,58 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
 using HelloGameDev;
-using System;
+
 
 public class Factory : MonoBehaviour
 {
-    public static Action gameWin;
-
-    public Animator gate;
+    private FactoryManager factoryManager;
+    private bool _isDead = false;
 
     private ZoneManager zoneManager;
+    private Saturation saturation;
 
     public float currentHealth;
     public float maxHealth;
 
-    bool isGameOver;
-
-    public UnityEvent onGateOpen, onEnd;
-
+    private void Awake()
+    {
+        saturation = GetComponent<Saturation>();
+        factoryManager = GetComponentInParent<FactoryManager>();
+    }
     private void Start()
     {
-        UIManager.allZoneCleared += OnGateOpen;
         currentHealth = maxHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         // Si c'est un tag "Projectile"
-        if (collision.collider.gameObject.CompareTag("Projectile"))
+        if (
+            (
+                collision.collider.gameObject.CompareTag("Projectile") ||
+                collision.collider.gameObject.CompareTag("Projectile_B") ||
+                collision.collider.gameObject.CompareTag("Projectile_C")
+            ) && !_isDead )
         {
+            Debug.Log("Touché la tour !");
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
             currentHealth -= 10;
+            Debug.Log("Current health / maxHealth = " + (1 - (currentHealth / maxHealth)));
+            saturation.SetSaturation(1 - Mathf.Clamp01(currentHealth / maxHealth));
 
-            if (currentHealth < 0 && !isGameOver)
+            if (currentHealth <= 0)
             {
-                isGameOver = true;
-                onEnd?.Invoke();
-                Invoke("GameEnd", 10f);
+                _isDead = true;
+                factoryManager.AddClearedFactory();
             }
         }
     }
 
-    public void OnGateOpen()
-    {
-        gate.SetBool("Open", true);
-        onGateOpen?.Invoke();
-    }
-
-    public void GameEnd()
-    {
-        SceneTransitionManager.LoadScene(SceneTransitionManager.Scene.Credits);
-    }
+    
 }
