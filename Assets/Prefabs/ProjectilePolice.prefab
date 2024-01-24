@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3539142458555303691}
   - component: {fileID: 7770623261292698206}
   - component: {fileID: 4978876080757199537}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ProjectilePolice
   m_TagString: ProjectilePolicemen
   m_Icon: {fileID: 0}

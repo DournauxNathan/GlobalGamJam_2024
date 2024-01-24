@@ -93,6 +93,26 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Si c'est un tag "Projectile"
+        if (other.CompareTag("ProjectilePolicemen"))
+        {
+            Debug.LogWarning("");
+
+            // On détruit le projectile
+            Destroy(other.gameObject);
+
+            currentHealth--;
+            UIManager.Instance.UpdateSlider(currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Debug.LogWarning("GAME OVER");
+            }
+        }
+    }
 }
 
 
