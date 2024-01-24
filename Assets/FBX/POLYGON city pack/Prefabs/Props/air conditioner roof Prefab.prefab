@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4095668503671408}
   - component: {fileID: -3655545425055304156}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: air conditioner roof Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33902675167032354}
   - component: {fileID: 23517253583696752}
   - component: {fileID: 65474215613389204}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: air conditioner roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}

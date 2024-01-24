@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038716849558988}
   - component: {fileID: 2291750205961001975}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wrench prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33117513515088886}
   - component: {fileID: 23533656894527822}
   - component: {fileID: 64806341835517316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wrench
   m_TagString: Untagged
   m_Icon: {fileID: 0}

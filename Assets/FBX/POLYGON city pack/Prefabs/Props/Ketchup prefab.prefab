@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33753897295842164}
   - component: {fileID: 23086630846002234}
   - component: {fileID: 65246226055876012}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: mayonnaiseKetchup (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4328102105405886}
   - component: {fileID: 4746905409717349855}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ketchup prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33620344343235668}
   - component: {fileID: 23290188656077018}
   - component: {fileID: 65260168402400560}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: platt 2 sign part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4146958492408656}
   - component: {fileID: -7506302638503503667}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: platt sign 2 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

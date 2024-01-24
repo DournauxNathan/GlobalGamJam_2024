@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33103832963314638}
   - component: {fileID: 23471972044019168}
   - component: {fileID: 65298540870518820}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: air conditioner wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468589885252268}
   - component: {fileID: 890565191432356786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: air conditioner wall Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

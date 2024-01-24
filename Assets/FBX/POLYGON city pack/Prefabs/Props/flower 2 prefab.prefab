@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4860498484005860}
   - component: {fileID: 33086165081300348}
   - component: {fileID: 23047179430526960}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flower 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4315948977571686}
   - component: {fileID: 9170355394397355801}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flower 2 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

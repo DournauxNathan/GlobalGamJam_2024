@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33709613819677734}
   - component: {fileID: 23538034704291556}
   - component: {fileID: 64379194597998066}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: door 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884130492571914}
   - component: {fileID: 5757752029413064255}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Big_trash_bin prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 33270614951584920}
   - component: {fileID: 23274287443516918}
   - component: {fileID: 64518191158647524}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: door 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 33267741263476542}
   - component: {fileID: 23550363612717352}
   - component: {fileID: 64148542245802572}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Big_trash_bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

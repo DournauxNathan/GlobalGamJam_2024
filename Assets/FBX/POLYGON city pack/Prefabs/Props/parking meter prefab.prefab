@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4923929284851280}
   - component: {fileID: -4530314534490989684}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: parking meter prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33470066829507536}
   - component: {fileID: 23729390461723732}
   - component: {fileID: 65737834551485358}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: parking meter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

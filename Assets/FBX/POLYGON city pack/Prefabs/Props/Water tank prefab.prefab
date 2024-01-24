@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040386314876686}
   - component: {fileID: -5170827630695791998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Water tank prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33793313451356176}
   - component: {fileID: 23606153568497380}
   - component: {fileID: 64709399572035388}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Water tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}

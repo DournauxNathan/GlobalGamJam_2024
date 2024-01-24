@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4529547751229238}
   - component: {fileID: 3792643309149021430}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ATM_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33077569004084122}
   - component: {fileID: 23799119685507120}
   - component: {fileID: 65500810423645448}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ATM
   m_TagString: Untagged
   m_Icon: {fileID: 0}

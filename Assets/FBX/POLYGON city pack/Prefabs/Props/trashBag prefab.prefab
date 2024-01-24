@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33037813876768138}
   - component: {fileID: 23611118630367938}
   - component: {fileID: 64110119354787584}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trashBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4631891537778504}
   - component: {fileID: 6161637917996696659}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trashBag prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

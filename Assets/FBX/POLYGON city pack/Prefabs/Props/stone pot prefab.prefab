@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33853668951170078}
   - component: {fileID: 23033937103755954}
   - component: {fileID: 64444443302316780}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: stone pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4653968508409896}
   - component: {fileID: -1153164856882076777}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: stone pot prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

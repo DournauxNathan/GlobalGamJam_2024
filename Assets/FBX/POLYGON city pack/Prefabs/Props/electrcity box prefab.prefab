@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33365899102995538}
   - component: {fileID: 23317628553936864}
   - component: {fileID: 65786143325926970}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: electrcity box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4862721527405660}
   - component: {fileID: -9050432212236332005}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: electrcity box prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33202598452609472}
   - component: {fileID: 23729058636220162}
   - component: {fileID: 65738914748616680}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4488567837450824}
   - component: {fileID: 5169656464466681553}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bench prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

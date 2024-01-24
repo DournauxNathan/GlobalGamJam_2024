@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4626247208113436}
   - component: {fileID: 3511544842939715476}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bus stop pole prefabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33517782441591372}
   - component: {fileID: 23067166679041796}
   - component: {fileID: 64815844310818516}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bus stop pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}

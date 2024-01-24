@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33753494449431904}
   - component: {fileID: 23275334887333856}
   - component: {fileID: 65432636346165748}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222056949448446}
   - component: {fileID: 4878255072569278856}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: burger prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

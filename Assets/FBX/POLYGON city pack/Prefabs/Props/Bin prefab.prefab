@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33587886556086272}
   - component: {fileID: 23460948065161454}
   - component: {fileID: 65404575972090334}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4096586194150716}
   - component: {fileID: 1080076298472828653}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bin prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

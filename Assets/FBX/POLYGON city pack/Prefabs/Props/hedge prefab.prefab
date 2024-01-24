@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976480203910972}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786106381246896}
   - component: {fileID: -6205254584602386401}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hedge prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 33009963842391744}
   - component: {fileID: 23947138277641714}
   - component: {fileID: 64402796504928138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33902802302081708}
   - component: {fileID: 23339579071200754}
   - component: {fileID: 64443902021405798}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wood pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4852324116107366}
   - component: {fileID: -3490776354221317441}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wood pot prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4138057623769590}
   - component: {fileID: 9105972189838053109}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wall 6 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33207355693861374}
   - component: {fileID: 23300204631102006}
   - component: {fileID: 64644642695620784}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wall 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
