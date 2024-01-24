@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,6 @@ public class Saturation : MonoBehaviour
     ZoneManager _zoneManager;
     [SerializeField] private AnimationCurve _lerpSaturationCurve;
     private bool _stopSaturation = false;
-
 
     private void Awake()
     {
@@ -28,6 +28,15 @@ public class Saturation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (_zoneManager != null)
+        {
+            _zoneManager.AddSaturationChildren(this);
+        } else
+        {
+            Debug.Log("Pas de ZoneManager trouvé pour : " + this.name);
+        }
+        
+
         Shader saturationShader = Shader.Find("Shader Graphs/ObjectLitGrayScale");
 
         for (int j = 0; j < _meshRenderers.Count; j++)
@@ -50,18 +59,10 @@ public class Saturation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_zoneManager != null && _saturation != _zoneManager._completion && !_stopSaturation)
-        {
-            StartCoroutine(ChangeSaturation());
-        }
-        
     }
 
-    IEnumerator ChangeSaturation(float to = -1f)
+    public void ChangeSaturation(float to = -1f)
     {
-        /*float time = 0f;
-        float duration = 0.8f;*/
-
         float startSaturation = _saturation;
         float endSaturation = (to == -1f) ? _zoneManager._completion : to;
 
@@ -75,37 +76,17 @@ public class Saturation : MonoBehaviour
             }
         }
 
-        yield return null;
+        _saturation = endSaturation;
 
         if (endSaturation == 1)
         {
             _stopSaturation = true;
         }
-        
-
-        /*while (time < duration)
-        {
-            _saturation = Mathf.Lerp(startSaturation, endSaturation, _lerpSaturationCurve.Evaluate(time / duration));
-
-            for (int i = 0; i < _meshRenderers.Count; i++)
-            {
-                for (int j = 0; j < _meshRenderers[i].materials.Length; j++)
-                {
-                    _meshRenderers[i].materials[j].SetFloat("_Saturation", _saturation);
-                }
-
-                yield return null;
-            }
-
-            time += Time.deltaTime;
-
-            yield return null;
-        }*/
     }
 
     public void SetSaturation(float saturation)
     {
         Debug.Log("Changement saturation à " + saturation + " demandé");
-        StartCoroutine(ChangeSaturation(saturation));
+        ChangeSaturation(saturation);
     }
 }

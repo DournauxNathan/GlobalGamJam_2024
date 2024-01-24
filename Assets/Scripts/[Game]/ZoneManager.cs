@@ -11,6 +11,8 @@ public class ZoneManager : MonoBehaviour
     [HideInInspector] public BoxCollider _boxCollider;
     public string _districtName;
 
+    List<Saturation> _saturationsChildren = new List<Saturation>();
+
     public UnityEvent _onCompletionChange;
     bool updateMusic = false;
 
@@ -22,6 +24,11 @@ public class ZoneManager : MonoBehaviour
     private void Start()
     {
         UIManager.Instance.SubscribeZoneManager(this);
+    }
+
+    public void AddSaturationChildren(Saturation saturationElement)
+    {
+        _saturationsChildren.Add(saturationElement);
     }
 
     public void AddMrSmith(MrSmith mrSmith)
@@ -55,6 +62,11 @@ public class ZoneManager : MonoBehaviour
 
         // On trigger l'event de completion de la zone
         _onCompletionChange.Invoke();
+
+        foreach (Saturation saturation in _saturationsChildren)
+        {
+            saturation.ChangeSaturation(_completion);
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
