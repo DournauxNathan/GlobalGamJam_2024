@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4789392437579438}
   - component: {fileID: -2767315547657571624}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Traffic light 4 Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33402619854212668}
   - component: {fileID: 23289473655067166}
   - component: {fileID: 64355154293267742}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Traffic_light_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

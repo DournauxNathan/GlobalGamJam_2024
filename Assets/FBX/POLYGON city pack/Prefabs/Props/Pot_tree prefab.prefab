@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4790015206267544}
   - component: {fileID: -8696363470755427016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pot_tree prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33722895995981516}
   - component: {fileID: 23329289922758508}
   - component: {fileID: 65671619047029818}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pot_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}

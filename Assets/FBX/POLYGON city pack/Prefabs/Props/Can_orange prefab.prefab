@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4034965763944526}
   - component: {fileID: -2411127830975740923}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_orange prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33592708142920230}
   - component: {fileID: 23966613267704586}
   - component: {fileID: 65121639104494446}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}

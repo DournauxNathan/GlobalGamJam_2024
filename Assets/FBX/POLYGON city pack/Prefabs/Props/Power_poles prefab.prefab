@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4267077966516242}
   - component: {fileID: 5444578461498819217}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Power_poles prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33524568332707718}
   - component: {fileID: 23455444179275346}
   - component: {fileID: 64873564767777878}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Power_poles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

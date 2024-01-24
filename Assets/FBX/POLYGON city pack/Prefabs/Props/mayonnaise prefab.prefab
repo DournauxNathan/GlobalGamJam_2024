@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566827672246302}
   - component: {fileID: -5434248708273481822}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: mayonnaise prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33273801761506694}
   - component: {fileID: 23158609066886862}
   - component: {fileID: 65045077728182208}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: mayonnaiseKetchup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

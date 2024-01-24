@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33707949095571774}
   - component: {fileID: 23814575407170242}
   - component: {fileID: 65812252581174794}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole_part_sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003731009380516}
   - component: {fileID: -3546535300489300310}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: platt pole prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

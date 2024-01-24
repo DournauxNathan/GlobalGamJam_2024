@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4647384027779008}
   - component: {fileID: 4436191206850010254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Traffic_pot prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33039477417223304}
   - component: {fileID: 23593254210333172}
   - component: {fileID: 64217065469776748}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Traffic_pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

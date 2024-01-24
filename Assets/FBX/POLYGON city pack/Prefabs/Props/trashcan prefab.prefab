@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4265163953248404}
   - component: {fileID: -4024384331878429981}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trashcan prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33597781703554386}
   - component: {fileID: 23417920779122962}
   - component: {fileID: 65590961772066512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trashcan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

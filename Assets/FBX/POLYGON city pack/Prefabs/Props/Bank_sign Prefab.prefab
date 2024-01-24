@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4613131010902594}
   - component: {fileID: -8096837111228907833}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bank_sign Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33668865753327264}
   - component: {fileID: 23735921203087378}
   - component: {fileID: 65761507886620018}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bank_sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

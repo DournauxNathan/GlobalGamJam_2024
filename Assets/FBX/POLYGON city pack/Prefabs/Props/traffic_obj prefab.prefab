@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33351397853001688}
   - component: {fileID: 23950133359724760}
   - component: {fileID: 64437297842944316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: traffic_obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540667670795376}
   - component: {fileID: -3932190000680836607}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: traffic_obj prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

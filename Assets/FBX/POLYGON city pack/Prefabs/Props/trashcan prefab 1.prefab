@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33569047101372272}
   - component: {fileID: 23661008956130478}
   - component: {fileID: 64190483246480572}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tree_holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4973367759857820}
   - component: {fileID: 5789613019834018260}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trashcan prefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

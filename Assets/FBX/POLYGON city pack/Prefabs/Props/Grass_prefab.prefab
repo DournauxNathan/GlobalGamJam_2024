@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4630327918303460}
   - component: {fileID: 33937374752381332}
   - component: {fileID: 23344939281529332}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4901737832239770}
   - component: {fileID: 9029188758445879015}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grass_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

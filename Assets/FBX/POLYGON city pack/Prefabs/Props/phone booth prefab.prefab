@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567606340523442}
   - component: {fileID: 4216930776391523059}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: phone booth prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33322317489619528}
   - component: {fileID: 23494407516472106}
   - component: {fileID: 65300760832128482}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: phone booth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

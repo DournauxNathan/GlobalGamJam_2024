@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33514340663157040}
   - component: {fileID: 23710059640322762}
   - component: {fileID: 65712561559278560}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450026544068382}
   - component: {fileID: -8591889330693347453}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_cola 1 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

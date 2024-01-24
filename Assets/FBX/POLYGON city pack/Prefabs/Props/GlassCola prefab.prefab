@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4849569113049662}
   - component: {fileID: -2674400669802539052}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GlassCola prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33924618404780072}
   - component: {fileID: 23666516230739842}
   - component: {fileID: 65868971724373102}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GlassCoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

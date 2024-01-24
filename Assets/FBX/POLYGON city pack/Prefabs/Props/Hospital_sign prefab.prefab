@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33760337636128220}
   - component: {fileID: 23299119118139636}
   - component: {fileID: 64133505792484584}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hospital_sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4229638173825476}
   - component: {fileID: -7604071344800102415}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hospital_sign prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

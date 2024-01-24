@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4441100831826320}
   - component: {fileID: -5674323516457689619}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_lemon prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33160468815443302}
   - component: {fileID: 23314537196645708}
   - component: {fileID: 65726621287909890}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Can_drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}

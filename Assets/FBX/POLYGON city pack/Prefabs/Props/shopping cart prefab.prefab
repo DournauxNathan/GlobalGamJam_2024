@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4859891124178544}
   - component: {fileID: -8070004846468917006}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: shopping cart prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33890231455873444}
   - component: {fileID: 23376953089698452}
   - component: {fileID: 64342507188714390}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: shopping cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33399187780002932}
   - component: {fileID: 23834429991423724}
   - component: {fileID: 64967638465211752}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: televserion antenna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4778492850418036}
   - component: {fileID: 6528292444026306933}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: televserion antenna prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

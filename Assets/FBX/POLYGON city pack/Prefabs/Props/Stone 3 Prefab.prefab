@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33763529961662090}
   - component: {fileID: 23105119379756468}
   - component: {fileID: 64375586858561320}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: stone 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231348148320386}
   - component: {fileID: -7340834696441109390}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stone 3 Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

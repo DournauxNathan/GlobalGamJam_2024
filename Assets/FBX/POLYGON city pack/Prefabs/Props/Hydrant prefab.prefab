@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4500247197365784}
   - component: {fileID: -2927327153676612641}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hydrant prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33624424565131056}
   - component: {fileID: 23866776794893626}
   - component: {fileID: 65894371888556610}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hydrant
   m_TagString: Untagged
   m_Icon: {fileID: 0}

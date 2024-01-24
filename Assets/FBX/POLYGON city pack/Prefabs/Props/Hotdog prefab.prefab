@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4432409121194468}
   - component: {fileID: 8160133426882968260}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hotdog prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33656642323163132}
   - component: {fileID: 23686936341103510}
   - component: {fileID: 65126608180777804}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hotdog
   m_TagString: Untagged
   m_Icon: {fileID: 0}

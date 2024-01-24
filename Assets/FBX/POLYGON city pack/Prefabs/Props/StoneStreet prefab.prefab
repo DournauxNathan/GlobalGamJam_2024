@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214142964039086}
   - component: {fileID: 6089327452446168709}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneStreet prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 33425898158106492}
   - component: {fileID: 23196913774265854}
   - component: {fileID: 64660680248632714}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneStreet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
