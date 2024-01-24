@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3208928717593143442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.399999, y: -60.075, z: 19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -426,17 +426,17 @@ PrefabInstance:
     - target: {fileID: 7798768810440758662, guid: a58dd32ac24738f4bb2d6b145b5b6f0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.9210443
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7798768810440758662, guid: a58dd32ac24738f4bb2d6b145b5b6f0d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9947853
+      value: -0.997
       objectReference: {fileID: 0}
     - target: {fileID: 7798768810440758662, guid: a58dd32ac24738f4bb2d6b145b5b6f0d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5246735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7798768810440758662, guid: a58dd32ac24738f4bb2d6b145b5b6f0d,
         type: 3}

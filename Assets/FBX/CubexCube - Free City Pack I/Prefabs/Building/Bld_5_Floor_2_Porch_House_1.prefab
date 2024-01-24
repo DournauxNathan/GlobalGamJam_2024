@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 424322400824758735}
   - component: {fileID: 2452079912634705157}
   - component: {fileID: -8000814365535056276}
+  - component: {fileID: 8951655941440109088}
   m_Layer: 0
   m_Name: Bld_5_Floor_2_Porch_House_1
   m_TagString: Untagged
@@ -121,3 +122,24 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8951655941440109088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109382654369580240}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 26.400908, y: 24.702272, z: 8.420132}
+  m_Center: {x: -0.008486748, y: 12.3511305, z: -0.30125368}
