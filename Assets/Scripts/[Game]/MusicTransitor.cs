@@ -6,7 +6,7 @@ public class MusicTransitor : MonoBehaviour
 {
     public AudioSource sadAS, happyAS;
 
-    float defaultVolume = 1f;
+    float defaultVolume = .75f;
     float transitionTime = 1.25f;
 
     private void Start()

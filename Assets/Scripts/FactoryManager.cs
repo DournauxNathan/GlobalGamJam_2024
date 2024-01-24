@@ -49,6 +49,8 @@ public class FactoryManager : MonoBehaviour
 
     public void GameEnd()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneTransitionManager.LoadScene(SceneTransitionManager.Scene.Credits);
     }
 }
