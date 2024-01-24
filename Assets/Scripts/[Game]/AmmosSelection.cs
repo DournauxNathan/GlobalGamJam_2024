@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class AmmosSelection : MonoBehaviour
 {
-    private int currentAmmoIndex = 0; // Current selected ammo index
-
-    public List<Ammos> ammos;
-
     public GunShooter gun;
+    public Image iconHint;
+    public List<Ammos> ammos;
+    private int currentAmmoIndex = 0; // Current selected ammo index
 
     void SwitchToNextAmmo()
     {
