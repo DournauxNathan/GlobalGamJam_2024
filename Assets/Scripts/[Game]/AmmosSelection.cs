@@ -77,4 +77,5 @@ public class Ammos
     public Image _memeGif;
     public AudioClip _audioClip;
     public GameObject projectile;
+    public Sprite emoji;
 }
