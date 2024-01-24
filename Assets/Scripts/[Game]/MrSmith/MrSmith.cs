@@ -38,6 +38,7 @@ public class MrSmith : MonoBehaviour
 
                 _mrSmithMovement._navMeshAgent.isStopped = true;
 
+                GetComponentInChildren<Canvas>().gameObject.SetActive(false);
                 _zoneManager.UpdateCompletion();
 
                 _isDead = true;
