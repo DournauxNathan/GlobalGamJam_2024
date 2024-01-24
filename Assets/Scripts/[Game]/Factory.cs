@@ -36,12 +36,10 @@ public class Factory : MonoBehaviour
                 collision.collider.gameObject.CompareTag("Projectile_C")
             ) && !_isDead )
         {
-            Debug.Log("Touché la tour !");
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
             currentHealth -= 10;
-            Debug.Log("Current health / maxHealth = " + (1 - (currentHealth / maxHealth)));
             saturation.SetSaturation(1 - Mathf.Clamp01(currentHealth / maxHealth));
 
             if (currentHealth <= 0)
