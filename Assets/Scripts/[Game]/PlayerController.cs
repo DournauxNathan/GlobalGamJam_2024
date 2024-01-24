@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Si c'est un tag "Projectile"
-        if (collision.collider.gameObject.CompareTag("Projectile"))
+        if (collision.collider.gameObject.CompareTag("ProjectilePolicemen"))
         {
             // On détruit le projectile
             Destroy(collision.collider.gameObject);

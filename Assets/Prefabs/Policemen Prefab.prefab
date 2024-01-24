@@ -83,14 +83,14 @@ MonoBehaviour:
   _isMoving: 0
   _waitDuration: 2
   _destination: {x: 0, y: 0, z: 0}
-  projectilePrefab: {fileID: 6864772971346618449, guid: d49d4e7bd7db3cb4483f8186b81ef25b,
+  projectilePrefab: {fileID: 6864772971346618449, guid: e1a1345624c4b2b4f9e01124eb3b2b3e,
     type: 3}
   shootingPoint: {fileID: 8982017847781778580}
   playerLayer:
     serializedVersion: 2
     m_Bits: 2048
-  detectionRadius: 5
-  fireRate: 1
+  detectionRadius: 8
+  fireRate: 2
   isShooting: 0
   isPlayerOnSight: 0
   rotationSpeed: 50

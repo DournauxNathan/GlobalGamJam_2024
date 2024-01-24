@@ -3,7 +3,6 @@ using UnityEngine.VFX;
 
 public class Player : MonoBehaviour
 {
-    public ZoneManager _currentZone;
     public VisualEffect _rainEffect;
     [HideInInspector] public PlayerController _playerController;
 

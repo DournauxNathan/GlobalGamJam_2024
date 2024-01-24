@@ -7,7 +7,6 @@ public class GunShooter : MonoBehaviour
     public GameObject projectilePrefab;
 
     public Transform shootingPoint;
-    public float projectileSpeed = 10f;
     public float fireRate = 0.5f;
 
     private float nextFireTime;
@@ -25,11 +24,6 @@ public class GunShooter : MonoBehaviour
             {
                 _audioSource?.PlayOneShot(onShootSFX);
 
-                /*if (!_audioSource.isPlaying)
-                {
-                    _audioSource?.PlayOneShot(onShootSFX);
-                }*/
-
                 ShootProjectile();
                 nextFireTime = Time.time + 1f / fireRate;
             }
@@ -39,14 +33,16 @@ public class GunShooter : MonoBehaviour
     void ShootProjectile()
     {
         // Instantiate the projectile at the shooting point's position and rotation
-        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+        GameObject projectileGO = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
 
         // Access the rigidbody of the projectile and apply a forward force
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+        Rigidbody projectileRb = projectileGO.GetComponent<Rigidbody>();
+
+        Projectile projectile = projectileGO.GetComponent<Projectile>();
 
         if (projectileRb != null)
         {
-            projectileRb.AddForce(shootingPoint.forward * projectileSpeed, ForceMode.Force);
+            projectileRb.AddForce(shootingPoint.forward * projectile.speed, ForceMode.Force);
         }
         else
         {

@@ -134,14 +134,16 @@ public class PolicemenAI : MonoBehaviour
     void ShootProjectile()
     {
         // Instantiate the projectile at the shooting point's position and rotation
-        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+        GameObject projectileGO = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
 
         // Access the rigidbody of the projectile and apply a forward force
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+        Rigidbody projectileRb = projectileGO.GetComponent<Rigidbody>();
+
+        Projectile projectile = projectileGO.GetComponent<Projectile>();
 
         if (projectileRb != null)
         {
-            projectileRb.AddForce(shootingPoint.forward * 1200, ForceMode.Force);
+            projectileRb.AddForce(shootingPoint.forward * projectile.speed, ForceMode.Force);
         }
         else
         {
@@ -193,7 +195,7 @@ public class PolicemenAI : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Si c'est un tag "Projectile"
-        if (collision.gameObject.CompareTag("Projectile"))
+        if (collision.gameObject.CompareTag("Projectile") || collision.gameObject.CompareTag("Projectile_B") || collision.gameObject.CompareTag("Projectile_C"))
         {
             // On détruit le projectile
             Destroy(collision.gameObject);
@@ -204,12 +206,9 @@ public class PolicemenAI : MonoBehaviour
             {
                 Destroy(this.gameObject);
 
-                // On change sa couleur pour du rose
-                //GetComponent<Renderer>().material.color = Color.magenta;
+                /*_navMeshAgent.isStopped = true;
 
-                _navMeshAgent.isStopped = true;
-
-                _zoneManager.UpdateCompletion();
+                _zoneManager.UpdateCompletion();*/
             }
         }
     }
