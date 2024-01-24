@@ -31,11 +31,7 @@ public class Saturation : MonoBehaviour
         if (_zoneManager != null)
         {
             _zoneManager.AddSaturationChildren(this);
-        } else
-        {
-            Debug.Log("Pas de ZoneManager trouvé pour : " + this.name);
         }
-        
 
         Shader saturationShader = Shader.Find("Shader Graphs/ObjectLitGrayScale");
 
@@ -50,6 +46,7 @@ public class Saturation : MonoBehaviour
                 materials[i] = new Material(saturationShader);
                 materials[i].SetColor("_Color", _meshRenderers[j].materials[i].GetColor("_Color"));
                 materials[i].SetTexture("_MainTex", _meshRenderers[j].materials[i].GetTexture("_MainTex"));
+                materials[i].SetFloat("_Saturation", 0f);
             }
 
             _meshRenderers[j].materials = materials;
@@ -63,10 +60,7 @@ public class Saturation : MonoBehaviour
 
     public void ChangeSaturation(float to = -1f)
     {
-        float startSaturation = _saturation;
         float endSaturation = (to == -1f) ? _zoneManager._completion : to;
-
-        Debug.Log("Changement saturation de " + startSaturation + " à " + endSaturation);
 
         for (int i = 0; i < _meshRenderers.Count; i++)
         {
@@ -84,9 +78,19 @@ public class Saturation : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        for (int i = 0; i < _meshRenderers.Count; i++)
+        {
+            for (int j = 0; j < _meshRenderers[i].materials.Length; j++)
+            {
+                _meshRenderers[i].materials[j].SetFloat("_Saturation", 0f);
+            }
+        }
+    }
+
     public void SetSaturation(float saturation)
     {
-        Debug.Log("Changement saturation à " + saturation + " demandé");
         ChangeSaturation(saturation);
     }
 }
