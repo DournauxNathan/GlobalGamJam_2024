@@ -1141,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 8291798098523006525, guid: 9f6fd5d8038b11e4ab9ce71776a855c0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3409,7 +3409,7 @@ PrefabInstance:
     - target: {fileID: 4103085141919786829, guid: d7e1c272529866d448f99b86770b8fbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7106085890239581370, guid: d7e1c272529866d448f99b86770b8fbb,
         type: 3}
@@ -3879,7 +3879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
