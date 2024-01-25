@@ -5,25 +5,37 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public Slider volumeSlider;
+    public Slider musicSlider;
+    public Slider sfxSlider;
     public Slider sensitivitySlider;
 
-    private void Start()
+    private void Awake()
     {
-        // Initialize sliders with current settings
-        volumeSlider.value = SettingsManager.instance.volume;
-        sensitivitySlider.value = SettingsManager.instance.mouseSensitivity;
+        musicSlider.onValueChanged.AddListener(OnMusicVolumeChange);
+        sfxSlider.onValueChanged.AddListener(OnSFXVolumeChange);
+        sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
     }
 
-    public void OnVolumeChanged(float value)
+    private void OnDestroy()
     {
-        SettingsManager.instance.volume = value;
-        // Implement code to adjust volume in your game
+        musicSlider.onValueChanged.RemoveListener(OnMusicVolumeChange);
+        sfxSlider.onValueChanged.RemoveListener(OnSFXVolumeChange);
+        sensitivitySlider.onValueChanged.RemoveListener(OnSensitivityChanged);
+    }
+
+    private void OnMusicVolumeChange(float volume)
+    {
+        SettingsManager.Instance.SetMusicVolume(volume);
+    }
+
+    private void OnSFXVolumeChange(float volume)
+    {
+        SettingsManager.Instance.SetSFXVolume(volume);
     }
 
     public void OnSensitivityChanged(float value)
     {
-        SettingsManager.instance.mouseSensitivity = value;
+        SettingsManager.Instance.mouseSensitivity = value;
         // Implement code to adjust mouse sensitivity in your game
     }
 }

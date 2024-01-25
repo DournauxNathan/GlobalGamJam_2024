@@ -27,6 +27,9 @@ public class UIManager : MonoBehaviour
     public SoundManager _soundManager;
     public bool updateMusic;
 
+    private bool openOptionsMenu;
+    private GameObject optionsPanel;
+
     private void Awake()
     {
         if (UIManager.Instance == null)
@@ -40,6 +43,21 @@ public class UIManager : MonoBehaviour
         }
 
         _soundManager = GetComponent<SoundManager>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleOptions();
+        }
+    }
+
+    private void ToggleOptions()
+    {
+        openOptionsMenu = !openOptionsMenu;
+
+        optionsPanel.SetActive(openOptionsMenu);
     }
 
     public void SetSlider(float maxValue, float currentValue)
