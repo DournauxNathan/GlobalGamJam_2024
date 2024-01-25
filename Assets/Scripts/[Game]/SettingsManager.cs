@@ -5,7 +5,6 @@ public class SettingsManager : MonoBehaviour
 {
     public static SettingsManager Instance;
 
-    // Mouse sensitivity settings
     public float mouseSensitivity { get; set; }
 
     public AudioMixer audioMixer;
