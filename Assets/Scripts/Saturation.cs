@@ -77,17 +77,40 @@ public class Saturation : MonoBehaviour
     private IEnumerator LerpSaturation(Material material, float saturation)
     {
         float elapsedTime = 0f;
-        float duration = 0.8f;
+        float duration = 1f;
 
         float startSaturation = _saturation;
         float endSaturation = saturation;
+
+        float halfBlendColorTextEnd = 1f;
+        float startBlendColorText = 0f;
+
+        bool goDown = false;
         while (elapsedTime < duration)
         {
-            material.SetFloat("_Saturation", Mathf.Lerp(startSaturation, endSaturation, _lerpSaturationCurve.Evaluate(elapsedTime / duration)));
+            // On lerp la couleur blended avec la texture sur la première moitié de la durée
+            if (elapsedTime < (duration / 2f))
+            {
+                material.SetFloat("_BlendColorText", Mathf.Lerp(startBlendColorText, halfBlendColorTextEnd, _lerpSaturationCurve.Evaluate(elapsedTime / duration)));
+            }
+            // On revient à la couleur de base sur la deuxième moitié de la durée
+            else
+            {
+                if (!goDown)
+                {
+                    material.SetFloat("_Saturation", endSaturation);
+                    goDown = true;
+                }
+
+                material.SetFloat("_BlendColorText", Mathf.Lerp(halfBlendColorTextEnd, startBlendColorText, _lerpSaturationCurve.Evaluate(elapsedTime / duration)));
+            }
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        material.SetFloat("_Saturation", endSaturation);
+        material.SetFloat("_BlendColorText", startBlendColorText);
 
         yield return null;
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8613923497627796955}
   - component: {fileID: 4622125181529344638}
   - component: {fileID: 7476504336628006580}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Props_Rocks_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989498649978249057}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
