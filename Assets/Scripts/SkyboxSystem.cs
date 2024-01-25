@@ -15,38 +15,27 @@ public class SkyboxSystem : MonoBehaviour
         DynamicGI.UpdateEnvironment();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        // RenderSettings.skybox = Mathf.Lerp(_skyboxSad, _skyboxHappy, testCompletion);// _playerController._currentZone._completion);
-        // LerpSkyboxMaterials(_skyboxSad, _skyboxHappy, testCompletion);// _playerController._currentZone._completion);
-        /*if (testCompletion < 1)
-        {
-            testCompletion += Time.deltaTime / _transitionTime;
-            RenderSettings.skybox.Lerp(_skyboxSad, _skyboxHappy, testCompletion);
-            DynamicGI.UpdateEnvironment(); // Mettez à jour l'éclairage global si nécessaire
-        }*/
-    }
-
     public void LerpSkybox()
     {
-        float elapsedTime = 0f;
-
-        float startT = RenderSettings.skybox.GetFloat("_t");
-        float endT = _playerController._currentZone._completion;
-
-        while (elapsedTime < _transitionTime)
+        if (_playerController._currentZone._completion == 0.5f || _playerController._currentZone._completion == 1f)
         {
-            float t = elapsedTime / _transitionTime;
+            float elapsedTime = 0f;
 
-            RenderSettings.skybox.SetFloat("_t", Mathf.Lerp(startT, endT, t));
+            float startT = RenderSettings.skybox.GetFloat("_t");
+            float endT = _playerController._currentZone._completion;
 
-            elapsedTime += Time.deltaTime;
+            while (elapsedTime < _transitionTime)
+            {
+                float t = elapsedTime / _transitionTime;
+
+                RenderSettings.skybox.SetFloat("_t", Mathf.Lerp(startT, endT, t));
+
+                elapsedTime += Time.deltaTime;
+            }
+
+            RenderSettings.skybox.SetFloat("_t", endT);
+
+            DynamicGI.UpdateEnvironment();
         }
-
-        RenderSettings.skybox.SetFloat("_t", endT);
-
-        DynamicGI.UpdateEnvironment();
     }
 }

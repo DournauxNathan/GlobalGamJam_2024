@@ -53,11 +53,6 @@ public class Saturation : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void ChangeSaturation(float to = -1f)
     {
         float endSaturation = (to == -1f) ? _zoneManager._completion : to;
@@ -66,7 +61,8 @@ public class Saturation : MonoBehaviour
         {
             for (int j = 0; j < _meshRenderers[i].materials.Length; j++)
             {
-                _meshRenderers[i].materials[j].SetFloat("_Saturation", endSaturation);
+                // _meshRenderers[i].materials[j].SetFloat("_Saturation", endSaturation);
+                StartCoroutine(LerpSaturation(_meshRenderers[i].materials[j], endSaturation));
             }
         }
 
@@ -76,6 +72,24 @@ public class Saturation : MonoBehaviour
         {
             _stopSaturation = true;
         }
+    }
+
+    private IEnumerator LerpSaturation(Material material, float saturation)
+    {
+        float elapsedTime = 0f;
+        float duration = 0.8f;
+
+        float startSaturation = _saturation;
+        float endSaturation = saturation;
+        while (elapsedTime < duration)
+        {
+            material.SetFloat("_Saturation", Mathf.Lerp(startSaturation, endSaturation, _lerpSaturationCurve.Evaluate(elapsedTime / duration)));
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        yield return null;
     }
 
     private void OnDestroy()
