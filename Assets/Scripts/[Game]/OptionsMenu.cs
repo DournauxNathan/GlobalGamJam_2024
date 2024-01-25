@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -14,6 +15,18 @@ public class OptionsMenu : MonoBehaviour
         musicSlider.onValueChanged.AddListener(OnMusicVolumeChange);
         sfxSlider.onValueChanged.AddListener(OnSFXVolumeChange);
         sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+
+        if (PlayerPrefs.HasKey(SettingsManager.Instance.musicVolumeParameter))
+        {
+            float musicVolume = PlayerPrefs.GetFloat(SettingsManager.Instance.musicVolumeParameter);
+            musicSlider.value = musicVolume;
+        }
+
+        if (PlayerPrefs.HasKey(SettingsManager.Instance.sfxVolumeParameter))
+        {
+            float sfxVolume = PlayerPrefs.GetFloat(SettingsManager.Instance.sfxVolumeParameter);
+            sfxSlider.value = sfxVolume;
+        }
     }
 
     private void OnDestroy()

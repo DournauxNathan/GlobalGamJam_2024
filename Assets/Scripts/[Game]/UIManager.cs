@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
         }
 
         _soundManager = GetComponent<SoundManager>();
+        openOptionsMenu = false;
     }
 
     private void Update()
