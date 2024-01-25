@@ -36,6 +36,5 @@ public class OptionsMenu : MonoBehaviour
     public void OnSensitivityChanged(float value)
     {
         SettingsManager.Instance.mouseSensitivity = value;
-        // Implement code to adjust mouse sensitivity in your game
     }
 }

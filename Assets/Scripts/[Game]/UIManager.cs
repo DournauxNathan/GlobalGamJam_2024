@@ -27,8 +27,8 @@ public class UIManager : MonoBehaviour
     public SoundManager _soundManager;
     public bool updateMusic;
 
-    private bool openOptionsMenu;
-    private GameObject optionsPanel;
+    public GameObject optionsPanel;
+    public bool openOptionsMenu { get;  set; }
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
         _soundManager = GetComponent<SoundManager>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -57,7 +57,20 @@ public class UIManager : MonoBehaviour
     {
         openOptionsMenu = !openOptionsMenu;
 
+        Cursor.visible = openOptionsMenu;
+
         optionsPanel.SetActive(openOptionsMenu);
+
+        if (openOptionsMenu)
+        {
+
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void SetSlider(float maxValue, float currentValue)

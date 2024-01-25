@@ -202,7 +202,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 100
@@ -457,6 +457,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -482,7 +502,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
@@ -2290,6 +2325,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_DelayedUpdateVisuals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2315,7 +2360,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
@@ -3691,7 +3751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff93910101c869a428117098fa6113eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2
   audioMixer: {fileID: 24100000, guid: 27e7b24ea23cce549b7605d5258e18f5, type: 2}
   masterVolumeParameter: masterVolume
   musicVolumeParameter: musicVolume
@@ -4571,6 +4630,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596577301092353779, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4596,7 +4675,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825261058947921900, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2207811880368680086, guid: 71d1850bf4ab9f349ab89bbe2ab6c492,
@@ -5597,7 +5691,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316414330907416890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

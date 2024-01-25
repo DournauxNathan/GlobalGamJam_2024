@@ -19,7 +19,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        float sensitivity = SettingsManager.Instance.mouseSensitivity;
+        float sensitivity = (1.5f * SettingsManager.Instance.mouseSensitivity);
 
         // Get input
         float mouseX = Input.GetAxis("Mouse X");

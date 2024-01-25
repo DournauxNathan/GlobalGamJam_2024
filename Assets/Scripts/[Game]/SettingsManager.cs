@@ -6,7 +6,7 @@ public class SettingsManager : MonoBehaviour
     public static SettingsManager Instance;
 
     // Mouse sensitivity settings
-    public float mouseSensitivity = 2.0f;
+    public float mouseSensitivity { get; set; }
 
     public AudioMixer audioMixer;
     public string masterVolumeParameter = "masterVolume";
@@ -25,11 +25,10 @@ public class SettingsManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void SetMasterVolume(float volume)
+    private void Start()
     {
-        audioMixer.SetFloat(masterVolumeParameter, volume);
-        SaveVolumeSettings();
+        LoadVolumeSettings();
+        mouseSensitivity = .5f;
     }
 
     public void SetMusicVolume(float volume)
@@ -52,9 +51,25 @@ public class SettingsManager : MonoBehaviour
         {
             PlayerPrefs.SetFloat(musicVolumeParameter, value);
         }
+
         if (audioMixer.GetFloat(sfxVolumeParameter, out value))
         {
             PlayerPrefs.SetFloat(sfxVolumeParameter, value);
+        }
+    }
+
+    private void LoadVolumeSettings()
+    {
+        if (PlayerPrefs.HasKey(musicVolumeParameter))
+        {
+            float musicVolume = PlayerPrefs.GetFloat(musicVolumeParameter);
+            audioMixer.SetFloat(musicVolumeParameter, musicVolume);
+        }
+
+        if (PlayerPrefs.HasKey(sfxVolumeParameter))
+        {
+            float sfxVolume = PlayerPrefs.GetFloat(sfxVolumeParameter);
+            audioMixer.SetFloat(sfxVolumeParameter, sfxVolume);
         }
     }
 }
