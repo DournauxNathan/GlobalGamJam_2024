@@ -9,7 +9,6 @@ public class SettingsManager : MonoBehaviour
     public float mouseSensitivity { get; set; }
 
     public AudioMixer audioMixer;
-    public string masterVolumeParameter = "masterVolume";
     public string musicVolumeParameter = "musicVolume";
     public string sfxVolumeParameter = "sfxVolume";
 
