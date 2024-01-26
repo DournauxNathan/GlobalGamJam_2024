@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using HelloGameDev;
-
+using UnityEngine.VFX;
 
 public class Factory : MonoBehaviour
 {
@@ -18,11 +18,14 @@ public class Factory : MonoBehaviour
 
     // VFX
     [SerializeField] private GameObject _hitVFX;
+    [SerializeField] private GameObject _smokeGO;
+    private VisualEffect _smokeVFX;
 
     private void Awake()
     {
         saturation = GetComponent<Saturation>();
         factoryManager = GetComponentInParent<FactoryManager>();
+        _smokeVFX = _smokeGO.GetComponent<VisualEffect>();
     }
     private void Start()
     {
@@ -49,6 +52,7 @@ public class Factory : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                _smokeVFX.SetInt("isDefeated", 1);
                 _isDead = true;
                 factoryManager.AddClearedFactory();
             }
