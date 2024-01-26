@@ -27,6 +27,11 @@ public class PolicemenAI : MonoBehaviour
     // Rotation
     [SerializeField] private float rotationSpeed;
 
+    // Death & Hit
+    [SerializeField] private GameObject _hitVFX;
+    [SerializeField] private GameObject _deathVFX;
+    [SerializeField] private AudioClip _deathSFX;
+
     public int _hp = 3;
 
     private void Awake()
@@ -200,11 +205,17 @@ public class PolicemenAI : MonoBehaviour
             // On détruit le projectile
             Destroy(collision.gameObject);
 
+            Instantiate(_hitVFX, collision.transform.position, Quaternion.identity);
+
             _hp--;
 
             if (_hp <= 0)
             {
+                UIManager.Instance._soundManager.PlayPoofSound();
                 Destroy(this.gameObject);
+
+                Instantiate(_deathVFX, collision.transform.position, Quaternion.identity);
+                
 
                 /*_navMeshAgent.isStopped = true;
 

@@ -7,6 +7,8 @@ public class MrSmith : MonoBehaviour
     public int _hp = 3;
     private bool _isDead = false;
     public string projectileTag;
+    [SerializeField] private GameObject _deathVFX;
+    [SerializeField] private GameObject _hitVFX;
 
     private void Awake()
     {
@@ -28,12 +30,16 @@ public class MrSmith : MonoBehaviour
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
 
+            Instantiate(_hitVFX, transform.position, Quaternion.identity);
+
             _hp--;
 
             if (_hp <= 0)
             {
                 // On change sa couleur pour du rose
                 UIManager.Instance._soundManager.PlaySmithConversionSound();
+                UIManager.Instance._soundManager.PlayPoofSound();
+                Instantiate(_deathVFX, transform.position, Quaternion.identity);
 
                 _mrSmithMovement._navMeshAgent.isStopped = true;
 

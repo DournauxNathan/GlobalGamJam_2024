@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _smithConversionSound;
     [SerializeField] private AudioClip _districtVictorySound;
     [SerializeField] private AudioClip _victorySound;
+    [SerializeField] private AudioClip _poofSound;
 
     private void Awake()
     {
@@ -24,6 +26,11 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayPoofSound()
+    {
+        _audioSource.PlayOneShot(_poofSound);
     }
 
     public void PlaySmithConversionSound()
