@@ -12,8 +12,8 @@ public class UIManager : MonoBehaviour
     public static Action zoneCleared, allZoneCleared;
 
     [Header("Timer Settings")]
-    private float timer; // Current timer value
     [SerializeField] private TextMeshProUGUI timerText; // Reference to TextMeshPro Text component
+    public float timer { get; set; }
 
     [Header("Crosshair Settings")]
     public RectTransform crosshair;
@@ -35,7 +35,9 @@ public class UIManager : MonoBehaviour
     public bool updateMusic;
 
     public GameObject optionsPanel;
-    public bool openOptionsMenu { get;  set; }
+    public bool openOptionsMenu { get; set; }
+
+    public bool isGameOver { get; set; }
 
     private void Awake()
     {
@@ -96,6 +98,42 @@ public class UIManager : MonoBehaviour
     public void UpdateSlider(float value)
     {
         sadSlider.value = value / sadSlider.maxValue;
+
+        if (value <= 0)
+        {
+            PlayerController.onPlayerDown?.Invoke();
+            StartCoroutine(IncreaseSliderOverTime(5f));
+        }
+    }
+
+    IEnumerator IncreaseSliderOverTime(float duration)
+    {
+        float elapsedTime = 0f;
+        float startValue = sadSlider.minValue;
+        float endValue = sadSlider.maxValue;
+
+        while (elapsedTime < duration)
+        {
+            // Calculate the current value based on the elapsed time
+            float currentValue = Mathf.Lerp(startValue, endValue, elapsedTime / duration);
+
+            // Set the slider value
+            sadSlider.value = currentValue;
+
+            // Increment the elapsed time
+            elapsedTime += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Ensure the slider reaches its maximum value
+        sadSlider.value = endValue;
+
+        PlayerController.resetPlayer?.Invoke();
+
+        // Coroutine has finished, you can perform any actions here
+        Debug.Log("Slider reached maximum value!");
     }
 
     public void SetDistrictInfo(string districtName, float completion)
@@ -143,14 +181,14 @@ public class UIManager : MonoBehaviour
     void UpdateTimer()
     {
         // Check if the timer has reached 0
-        if (timer >= 0)
+        if (!isGameOver && timer >= 0)
         {
             // Decrement the timer by the time elapsed since the last frame
             timer += Time.deltaTime;
         }
     }
 
-    string FormatTime(float timeInSeconds)
+    internal string FormatTime(float timeInSeconds)
     {
         // Format the time as minutes:seconds
         int minutes = Mathf.FloorToInt(timeInSeconds / 60);

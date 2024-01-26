@@ -215,7 +215,7 @@ public class PolicemenAI : MonoBehaviour
                 Destroy(this.gameObject);
 
                 Instantiate(_deathVFX, collision.transform.position, Quaternion.identity);
-                
+                UIManager.Instance.timer -= 10f;
 
                 /*_navMeshAgent.isStopped = true;
 

@@ -433,7 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1865983d663fc498674c364bb944f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 60
   timerText: {fileID: 7729560005729490485}
   crosshair: {fileID: 8083536171370484803}
   crossHairFollowFactor: 5

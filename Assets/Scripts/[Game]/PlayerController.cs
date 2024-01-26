@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Header("MOVEMENT")]
     public float walkspeed = 5f;
     public float sprintSpeed = 10f;
+    public float downSpeed = 2f;
     private float speed;
     private float gravityModifier = -10f;
     private Vector3 movement;
@@ -21,12 +23,26 @@ public class PlayerController : MonoBehaviour
     private float currentHealth;
 
     private bool isWakling;
+    public static Action onPlayerDown, resetPlayer;
 
     void Start()
     {
+        onPlayerDown += isDown;
+        resetPlayer += ResetSpeed;
+
         controller = GetComponent<CharacterController>();
         currentHealth = maxHealth;
         UIManager.Instance.SetSlider(maxHealth, currentHealth);
+    }
+
+    private void isDown()
+    {
+        speed = downSpeed;
+    }
+
+    private void ResetSpeed()
+    {
+        speed = walkspeed;
     }
 
     void Update()

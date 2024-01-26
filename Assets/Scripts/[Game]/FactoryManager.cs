@@ -38,6 +38,8 @@ public class FactoryManager : MonoBehaviour
             _fireworksAudioSource.PlayDelayed(0.5f);
             _fireworksAudioSource.PlayDelayed(1f);
 
+            UIManager.Instance.isGameOver = true;
+
             onEnd?.Invoke();
             Invoke("GameEnd", 10f);
         }
