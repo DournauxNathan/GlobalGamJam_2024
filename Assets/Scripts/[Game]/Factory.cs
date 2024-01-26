@@ -16,6 +16,9 @@ public class Factory : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
+    // VFX
+    [SerializeField] private GameObject _hitVFX;
+
     private void Awake()
     {
         saturation = GetComponent<Saturation>();
@@ -38,6 +41,8 @@ public class Factory : MonoBehaviour
         {
             // On détruit le projectile
             Destroy(collision.collider.gameObject);
+
+            Instantiate(_hitVFX, collision.transform.position, Quaternion.identity);
 
             currentHealth -= 10;
             saturation.SetSaturation(1 - Mathf.Clamp01(currentHealth / maxHealth));

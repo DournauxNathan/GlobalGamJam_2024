@@ -63,10 +63,15 @@ public class ZoneManager : MonoBehaviour
         // On trigger l'event de completion de la zone
         _onCompletionChange.Invoke();
 
-        foreach (Saturation saturation in _saturationsChildren)
+        // On change les saturations uniquement si la zone est à 50% ou 100%
+        if (_completion == 0.5f || _completion == 1f)
         {
-            saturation.ChangeSaturation(_completion);
+            foreach (Saturation saturation in _saturationsChildren)
+            {
+                saturation.ChangeSaturation(_completion);
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider collider)

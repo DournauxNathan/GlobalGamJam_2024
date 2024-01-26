@@ -20,7 +20,7 @@ public class GunShooter : MonoBehaviour
         if (Time.time >= nextFireTime)
         {
             // Check for the fire input (you can customize this based on your input system)
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Fire1") && !UIManager.Instance.openOptionsMenu)
             {
                 _audioSource?.PlayOneShot(onShootSFX);
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float sensitivity = 1.5f;
     public float smoothing = 10f;
 
     private float smoothedMousePos;
@@ -20,6 +19,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        float sensitivity = (1.5f * SettingsManager.Instance.mouseSensitivity);
+
         // Get input
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");

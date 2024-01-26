@@ -94,6 +94,10 @@ MonoBehaviour:
   isShooting: 0
   isPlayerOnSight: 0
   rotationSpeed: 50
+  _hitVFX: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}
+  _deathVFX: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+    type: 3}
+  _deathSFX: {fileID: 8300000, guid: aa2e911bfe54a05468b5c682e4791b99, type: 3}
   _hp: 3
 --- !u!195 &7337273566766802270
 NavMeshAgent:
